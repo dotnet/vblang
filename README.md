@@ -1,3 +1,4 @@
+* Full Language Specification: [Markdown](spec)
 * List of [Active](proposals), [Adopted](proposals/adopted), and [Rejected](proposals/rejected) proposals can be found in the [proposals folder](proposals).
 * Archives of mailing lists discussions can be found [here](https://mailinglist-archives.org/).
 * Archives of notes from design meetings, etc., can be found in the [notes folder](notes).
