@@ -1,11 +1,11 @@
 * Full Language Specification: [Markdown](spec)
 * List of [Active](proposals), [Adopted](proposals/adopted), and [Rejected](proposals/rejected) proposals can be found in the [proposals folder](proposals).
-* Archives of mailing lists discussions can be found [here](https://mailinglist-archives.org/).
+* Archives of mailing lists discussions can be found [here](http://lists.dot.net/pipermail/vblang/).
 * Archives of notes from design meetings, etc., can be found in the [notes folder](notes).
 
 # Design Process
 
-1. To submit, support, and discuss ideas please subscribe to the [language design mailing list](https://vblang.org/design-mailing-list).
+1. To submit, support, and discuss ideas please subscribe to the [language design mailing list](https://lists.dot.net/mailman/listinfo/vblang).
 
 2. Ideas deemed cool by the language design team should be turned into a more fleshed out proposal based on the [proposal template](proposals/proposal-template.md). A good idea should:
     * Fit with the general theme and aesthetic of the language.
