@@ -1,13 +1,19 @@
+# Visual Basic .NET Language Design
+
+Welcome to the official repo for Visual Basic .NET language design.
+
 * Full Language Specification: [Markdown](spec)
 * List of [Active](proposals), [Adopted](proposals/adopted), and [Rejected](proposals/rejected) proposals can be found in the [proposals folder](proposals).
 * Archives of mailing lists discussions can be found [here](http://lists.dot.net/pipermail/vblang/).
 * Archives of notes from design meetings, etc., can be found in the [notes folder](notes).
 
-# Design Process
+## Design Process
+
+Visual Basic .NET is designed by the Visual Basic .NET Language Design Team (LDT).
 
 1. To submit, support, and discuss ideas please subscribe to the [language design mailing list](https://lists.dot.net/mailman/listinfo/vblang).
 
-2. Ideas deemed cool by the language design team should be turned into a more fleshed out proposal based on the [proposal template](proposals/proposal-template.md). A good idea should:
+2. Ideas that the LDT feel could potentially make it into the language should be turned into [proposals](proposals), based on this [template](proposals/proposal-template.md), either by members of the LDT or by community members by invitation from the LDT. The lifetime of a proposal is described in [proposals/README.md](proposals/README.md). A good proposal should:
     * Fit with the general theme and aesthetic of the language.
     * Not introduce subtly alternate syntax for existing features.
     * Add a lot of value for a clear set of users.
@@ -25,5 +31,13 @@
 6. A PR should be submitted amending the formal language specification with the new feature or behavior.
 
 7. Once a feature is implemented and merged into shipping branch of Roslyn and the appropriate changes merged into the language specification, the proposal should be archived under a folder corresponding to the version of the language in which it was included, e.g. [VB 15.1 proposals](proposals/adopted/vb15.1)). Rejected proposals are archived under the [rejected folder](proposals/rejected).
+
+## Language Design Meetings
+
+Language Design Meetings (LDMs) are held by the LDT and occasional invited guests, and are documented in Design Meeting Notes in the [meetings](meetings) folder, organized in folders by year. The lifetime of a design meeting note is described in [meetings/README.md](meetings/README.md). LDMs are where decisions about future Visual Basic .NET versions are made, including which proposals do work on, how to evolve the proposals, and whether and when to adopt them.
+
+## Implementation
+
+The reference implementation of the Visual Basic .NET language can be found in the [Roslyn repository](https://github.com/dotnet/roslyn). Until recently, that was also where language design artifacts were tracked. Please allow a little time as we move over active proposals.
 
 **DISCLAIMER**: An active proposal is under active consideration for inclusion into a future version of the Visual Basic .NET programming language but is not in any way guaranteed to ultimately be included in the next or any version of the language. A proposal may be postponed or rejected at any time during any phase of the above process based on feedback from the design team, community, code reviewers, or testing.
