@@ -2,19 +2,18 @@
 
 * [x] Proposed
 * [x] Prototype: [Complete](https://github.com/AdamSpeight2008/master_Feature_ImplicitDefaultOptionalParameter)
-* [ ] Implementation: [In Progress](https://github.com/dotnet/roslyn/BRANCH_NAME)
+* [ ] Implementation: [In Progress](https://github.com/AdamSpeight2008/roslyn-AdamSpeight2008/tree/PostDev15_Feature_ImplicitDefaultOptionalParameters)
 * [ ] Specification: [Not Started](pr/1)
 
 ## Summary
 [summary]: #summary
-
-One para explanation of the feature.
+Assume an implicit default value for optional parameter.
 
 ## Motivation
 [motivation]: #motivation
 
 Simplifies the type of the more common usage case, that of using the default value of the associated type as the default to value of the parameter.
-Eg `Foo(Optional size As String = Nothing)`
+Eg `Foo(Optional size As String = Nothing)` to `Foo(Optional size As String)`
 
 ## Detailed design
 [design]: #detailed-design
