@@ -3,15 +3,32 @@
 Welcome to the official repo for Visual Basic .NET language design.
 
 * Full Language Specification: [Markdown](spec)
-* List of [Active](proposals), [Adopted](proposals/adopted), and [Rejected](proposals/rejected) proposals can be found in the [proposals folder](proposals).
-* Archives of mailing lists discussions can be found [here](http://lists.dot.net/pipermail/vblang/).
+* List of proposals can be found in the [proposals folder](proposals).
 * Archives of notes from design meetings, etc., can be found in the [meetings folder](meetings).
+
+If you discover bugs or deficiencies in the above, please leave an issue to raise them, or even better: a pull request to fix them.
+
+For *new feature proposals*, however, please raise them for [discussion](https://github.com/dotnet/vblang/labels/Discussion), and *only* submit a proposal as a pull request if invited to do so by a member of the Language Design Team (a "champion").
+
+## Discussion
+
+Discussion pertaining to language features takes place in the form of issues in this repo, under the [Discussion label](https://github.com/dotnet/vblang/labels/Discussion).
+
+If you want to suggest a feature, discuss current design notes or proposals, etc., please [open a new issue](https://github.com/dotnet/vblang/issues/new), and it will be tagged Discussion.
+
+GitHub is not ideal for discussions, but it is beneficial to have language features discussed nearby to where the design artifacts are. Comment threads that are short and stay on topic are much more likely to be read. If you leave comment number fifty, chances are that only a few people will read it. To make discussions easier to navigate and benefit from, please observe a few rules of thumb:
+
+- Discussion should be relevant to Visual Basic .NET language design. Issues that are not will be summarily closed.
+- Choose a descriptive title for the issue, that clearly communicates the scope of discussion.
+- Stick to the topic of the issue title. If a comment is tangential, start a new issue and link back.
+- If a comment goes into detail on a subtopic, also consider starting a new issue and linking back.
+- Is your comment useful for others to read, or can it be adequately expressed with an emoji reaction to an existing comment?
 
 ## Design Process
 
 Visual Basic .NET is designed by the Visual Basic .NET Language Design Team (LDT).
 
-1. To submit, support, and discuss ideas please subscribe to the [language design mailing list](https://lists.dot.net/mailman/listinfo/vblang).
+1. To submit, support, and discuss ideas please use the [Discussion label](https://github.com/dotnet/vblang/labels/Discussion).
 
 2. Ideas that the LDT feel could potentially make it into the language should be turned into [proposals](proposals), based on this [template](proposals/proposal-template.md), either by members of the LDT or by community members by invitation from the LDT. The lifetime of a proposal is described in [proposals/README.md](proposals/README.md). A good proposal should:
     * Fit with the general theme and aesthetic of the language.
