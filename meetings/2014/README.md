@@ -10,13 +10,19 @@ Overview of meetings and agendas for 2014
 a complete roll-up of all language features that are on the table 
 
 
-## Feb 2, 2014
+## Feb 10, 2014
 
-[Visul Basic .NET Design Meeting Notes for Feb 17, 2014](LDM-2014-02-17.md)
+[Visul Basic .NET Design Meeting Notes for Feb 10, 2014](LDM-2014-02-10.md)
 
 
 Strict Module 
 
+
+## Mar 12, 2014
+
+[Visul Basic .NET Design Meeting Notes for Mar 12, 2014](LDM-2014-03-12.md)
+
+ProtectedAndFriend access modifier, and faster CInt(.) 
 
 ## Apr 1, 2014
 
@@ -30,13 +36,6 @@ String interpolation
 [Visul Basic .NET Design Meeting Notes for Apr 2, 2014](LDM-2014-04-02.md)
 
 Null-propagating operator ?. 
-
-
-## Apr 3, 2014
-
-[Visul Basic .NET Design Meeting Notes for Feb 17, 2014](LDM-2014-04-03.md)
-
-ProtectedAndFriend access modifier, and faster CInt(.) 
 
 ## Apr 16, 2014
 
