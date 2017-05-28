@@ -28,19 +28,22 @@ OptionalParameter ::= "Optional" ParameterName Typing? DefaultToValue?
    DefaultToValue ::= "=" ( "Nothing" | ConstantValue )
 ```
 
-**Examples**
-
+**Examples**    
+The following forms will be support by this proposal, which in essence the type of the optional parameter must be specified. 
 ```vb.net
-Foo( Optional arg0 )                     ' --> Foo( Optional arg0 As Object = Nothing )
 Foo( Optional arg1 As String )           ' --> Foo( Optional arg1 As String = Nothing )
 Foo( Optional arg2 As String = Nothing ) ' --> Foo( Optional arg2 As String = Nothing )
-Foo( Optional arg3 = "" )                ' --> Foo( Optional arg3 As String = "" )
 Foo( Optional arg4 As Integer )          ' --> Foo( Optional arg4 As Integer = Nothing )
 Foo( Optional arg5 As Integer = 0 )      ' --> Foo( Optional arg5 As Integer = 0 )
 Foo( Optional arg6 As Integer = 1 )      ' --> Foo( Optional arg6 As Integer = 1 )
+```
+Optional Parameters that don't specify a will function as existing (where the type is defined to object).    
+As not to introduce a breaking change. *(As pointed out by @AnthonyDGreen)*
+```vb.net
+Foo( Optional arg0 )                     ' --> Foo( Optional arg0 As Object = Nothing )
+Foo( Optional arg3 = "" )                ' --> Foo( Optional arg3 As String = "" )
 Foo( Optional arg7 = 7 )                 ' --> Foo( Optional arg7 As Integer = 7 )
 ```
-
 
 
 ## Potential Usage
