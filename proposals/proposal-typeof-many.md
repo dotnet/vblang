@@ -1,7 +1,7 @@
 # TypeOf Many
 
 * [x] Proposed
-* [ ] Prototype: [Complete](https://github.com/PROTOTYPE_OWNER/roslyn/BRANCH_NAME)
+* [ ] Prototype: [Still A Work In Progress](https://github.com/AdamSpeight2008/roslyn-AdamSpeight2008/tree/master-typeof)
 * [ ] Implementation: [In Progress](https://github.com/dotnet/roslyn/BRANCH_NAME)
 * [ ] Specification: [Not Started](pr/1)
 
