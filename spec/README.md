@@ -2,7 +2,7 @@ Visual Basic Language Specification
 =====================================
 __Version 11__
 
-(This document is also available for download: [vb.pdf](Visual%20Basic%20Language%20Specification.pdf?raw=true) and [vb.docx](Visual%20Basic%20Language%20Specification.docx?raw=true))
+(This document is also available for download: [vb.pdf](http://ljw1004.github.io/vbspec/Visual%20Basic%20Language%20Specification.pdf?raw=true) and [vb.docx](http://ljw1004.github.io/vbspec/Visual%20Basic%20Language%20Specification.docx?raw=true))
 
 * [Introduction](introduction.md#introduction)
     * [Grammar Notation](introduction.md#grammar-notation)
@@ -121,7 +121,7 @@ __Version 11__
     * [Recommended tags](documentation-comments.md#recommended-tags)
     * [ID Strings](documentation-comments.md#id-strings)
     * [Documentation comments example](documentation-comments.md#documentation-comments-example)
-* Grammar: [vb.html](http://ljw1004.github.io/vbspec/vb.html). Or download in ANTLR format: [vb.g4](vb.g4?raw=true).
+* Grammar: [vb.html](http://ljw1004.github.io/vbspec/vb.html). Or download in ANTLR format: [vb.g4](http://ljw1004.github.io/vbspec/vb.g4?raw=true).
 
 
 *Copyright (c) Microsoft. All Rights Reserved. Licensed under the Apache License, Version 2.0.  See [License.txt](https://github.com/dotnet/roslyn/blob/master/License.txt) for license information.*
