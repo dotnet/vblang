@@ -1013,6 +1013,11 @@ ElseStatement
 LineIfThenStatement
     : 'If' BooleanExpression 'Then' Statements ( 'Else' Statements )? StatementTerminator
     ;
+    
+ElseIf		
+	: 'ElseIf'		
+	| 'Else' 'If'   
+   ;
 ```
 
 Each expression in an `If...Then...Else` statement must be a Boolean expression, as per Section [Boolean Expressions](expressions.md#boolean-expressions). (Note: this does not require the expression to have Boolean type). If the expression in the `If` statement is true, the statements enclosed by the `If` block are executed. If the expression is false, each of the `ElseIf` expressions is evaluated. If one of the `ElseIf` expressions evaluates to true, the corresponding block is executed. If no expression evaluates to true and there is an `Else` block, the `Else` block is executed. Once a block finishes executing, execution passes to the end of the `If...Then...Else` statement.

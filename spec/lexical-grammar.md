@@ -684,12 +684,7 @@ SecondValue
 
 AMPM
     : 'AM' | 'PM'
-    ;
-
-ElseIf
-    : 'ElseIf'
-    | 'Else' 'If'
-    ;
+    ;    
 ```
 
 The literal may specify both a date and a time, just a date, or just a time. If the date value is omitted, then January 1 of the year 1 in the Gregorian calendar is assumed. If the time value is omitted, then 12:00:00 AM is assumed.
