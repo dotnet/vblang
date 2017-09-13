@@ -2,20 +2,6 @@
 
 ### Agenda
 * Nullable reference type
-* Scenario #154 - Reduce the need for backtracking while typing
-    * Proposal #59
-    * Proposal #116
-    * Proposal #138
-    * Proposal #156
 
-## Nullable
-Not ready yet.
-
-## Scenario #154
-
-### Proposal #116
-
-### Proposal #138
- 
-### Proposal #156
-
+## Nullable reference types
+Not ready yet. Revisit after the C# Prototype is released and we have more user feedback and concrete design decisions. Also, the damnit operator `!` conflicts with both VBs dictionary-access operator `dict!key` and the type character for single-precision floating-point numbers `Dim radius!` so we'll have to resolve that.
