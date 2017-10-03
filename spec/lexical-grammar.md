@@ -484,19 +484,19 @@ DigitSeparator
     ;
 
 IntLiteral
-    : Digit (DigitSeparator? Digit+ )+
+    : Digit (DigitSeparator* Digit+ )+
     ;
 
 HexLiteral
-    : '&' 'H' ( DigitSeparator? HexDigit+ )+
+    : '&' 'H' ( DigitSeparator* HexDigit+ )+
     ;
 
 OctalLiteral
-    : '&' 'O' ( DigitSeparator? OctalDigit+ )+
+    : '&' 'O' ( DigitSeparator* OctalDigit+ )+
     ;
 
 BinaryLiteral
-    : '&' 'B' ( DigitSeparator? BinaryDigit+ )+
+    : '&' 'B' ( DigitSeparator* BinaryDigit+ )+
     ;
 
 Digit
