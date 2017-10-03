@@ -430,7 +430,17 @@ BooleanLiteral
 
 ### Integer Literals
 
-Integer literals can be decimal (base 10), hexadecimal (base 16), or octal (base 8). A decimal integer literal is a string of decimal digits (0-9). A hexadecimal literal is `&H` followed by a string of hexadecimal digits (0-9, A-F). An octal literal is `&O` followed by a string of octal digits (0-7). Decimal literals directly represent the decimal value of the integral literal, whereas octal and hexadecimal literals represent the binary value of the integer literal (thus, `&H8000S` is -32768, not an overflow error).
+Integer literals can be decimal (base 10), hexadecimal (base 16), or octal (base 8), or binary (base 2).
+ * A decimal integer literal is a string of decimal digits (0-9).
+ * A hexadecimal literal is `&H` followed by a string of hexadecimal digits (0-9, A-F).
+ * An octal literal is `&O` followed by a string of octal digits (0-7).
+ * A binary literal is `&B` follewed by a string of binary digits. (0-1). 
+ * Any number of digit separator `_` are permited before any digit, or block of digits with a integer literal.
+   . eg. `&B_00000000_0000__0000___0000___000000000000`.
+ * An integer literal can not end with a digit separator. eg `&B_00001_`
+
+Decimal literals directly represent the decimal value of the integral literal, whereas binary, octal and hexadecimal literals represe+nt the binary value of the integer literal (thus, `&H8000S` is -32768, not an overflow error).
+
 
 ```antlr
 IntegerLiteral
