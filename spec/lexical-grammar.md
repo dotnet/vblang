@@ -441,6 +441,7 @@ IntegralLiteralValue
     : IntLiteral
     | HexLiteral
     | OctalLiteral
+    | BinaryLiteral
     ;
 
 IntegralTypeCharacter
@@ -478,16 +479,24 @@ UnsignedLongCharacter
     : 'UL'
     ;
 
+DigitSeparator
+    : '_'
+    ;
+
 IntLiteral
-    : Digit+
+    : Digit (DigitSeparator? Digit+ )+
     ;
 
 HexLiteral
-    : '&' 'H' HexDigit+
+    : '&' 'H' ( DigitSeparator? HexDigit+ )+
     ;
 
 OctalLiteral
-    : '&' 'O' OctalDigit+
+    : '&' 'O' ( DigitSeparator? OctalDigit+ )+
+    ;
+
+BinaryLiteral
+    : '&' 'B' ( DigitSeparator? BinaryDigit+ )+
     ;
 
 Digit
@@ -501,6 +510,10 @@ HexDigit
 
 OctalDigit
     : '0' | '1' | '2' | '3' | '4' | '5' | '6' | '7'
+    ;
+
+BinaryDigit
+    : '0' | '1'
     ;
 ```
 
