@@ -99,3 +99,5 @@ If no type character is specified,
 | `UL` | Unsigned Long | 0 | +18446744073709551615 |
 
 **Note.** There isn't a type character for `Byte` because the most natural character would be `B`, which is a legal character in a hexadecimal literal.
+
+**Prev:** [Literals](Literals) **Next:** [Floating-Point Literals](Literals-FloatingPoint)

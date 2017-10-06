@@ -77,3 +77,6 @@ Module Test
 End Module
 ```
 
+----
+
+**Prev:** [String Literals](Literals-String) **Next:** [Date Literals](Literals-Date)

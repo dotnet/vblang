@@ -36,4 +36,6 @@ A floating-point literal is an integer literal followed by an optional decimal p
 __Note.__ It is worth noting that the `System.Decimal` data type can encode trailing zeros in a value.    
 The specification currently makes no comment about whether trailing zeros in a `System.Decimal` literal should be honored by a compiler.
 
+----
 
+**Prev:** [Integer Literals](Literals-Integer) **Next:** [String Literals](Literals-String)

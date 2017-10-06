@@ -45,3 +45,7 @@ Dim n As Integer? = Nothing ' n = New Integer?()
 ```antlr
 BooleanLiteral : 'True' | 'False'  ;
 ```
+
+----
+
+**Next:** [Integer Literals](Literals-Integer)

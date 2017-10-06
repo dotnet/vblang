@@ -1,4 +1,4 @@
-[Lexical Grammar](Lexical-Grammar) / [Literals](Literals) / Date Literal    
+[Lexical Grammar](/Lexical-Grammar) / [Literals](Literals) / Date Literal    
 Related: [Nothing Literal](Literals#Nothing-Literal), [Boolean Literal](Literals#Boolean-Literal), [Integer](#Integer-Literal), [Floating Point](Literals-FloatingPoint#Integer-Literal), [String](Literals-String#String-Literal), [Character](Literals-String#Character-Literal), **[Date](Literals-Date#Date-Literal)**
 
 ----
@@ -60,3 +60,6 @@ d = # 13:45:39 #               ' Date value: 1/1/1 1:45:39PM.
 d = # 1AM #                    ' Date value: 1/1/1 1:00:00AM.
 d = # 13:45:39PM #             ' This date value is not valid.
 ```
+----
+
+**Prev:** [String Literals](Literals-String)
