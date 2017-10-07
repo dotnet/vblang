@@ -1,3 +1,4 @@
+^*Copyright (c) Microsoft. All Rights Reserved. Licensed under the Apache License, Version 2.0.  See [License.txt](https://github.com/dotnet/roslyn/blob/master/License.txt) for license information.*^    
 [Lexical Grammar](Lexical-Grammar) / [Literals](Literals) / Floating-Point Literal    
 **Related**: [Nothing Literal](Literals#Nothing-Literal), [Boolean Literal](Literals#Boolean-Literal), **[Integer](Literals-Integer#Integer-Literal)**, [Floating Point](Literals-FloatingPoint#Integer-Literal), [String](Literals-String#String-Literal), [Character](Literals-String#Character-Literal), [Date](Literals-Date#Date-Literal)   
 **Sub-Topics**: [Binary](#Binary), [Octal](#Octal), [Decimal](#Decimal), [Hexadecimal](#HexaDecimal), [Digit Separator](#Digit-Separator), [Type Character](#Type-Character)

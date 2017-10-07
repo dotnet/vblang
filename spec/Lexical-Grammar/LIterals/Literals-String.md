@@ -1,3 +1,4 @@
+^*Copyright (c) Microsoft. All Rights Reserved. Licensed under the Apache License, Version 2.0.  See [License.txt](https://github.com/dotnet/roslyn/blob/master/License.txt) for license information.*^    
 [Lexical Grammar](Lexical-Grammar) / [Literals](Literals) / String Literal    
 **Related**: [Nothing Literal](Literals#Nothing-Literal), [Boolean Literal](Literals#Boolean-Literal), [Integer](Literals-Integer#Integer-Literal), [Floating Point](Literals-FloatingPoint#Integer-Literal), **[String Literal](#String=Literal)**, **[Character Literal](#Character-Literal)**    
 **Sub-Topics**: [String Literal](#String=Literal), [Character Literal](#Character-Literal)

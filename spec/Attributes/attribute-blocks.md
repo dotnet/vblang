@@ -1,4 +1,5 @@
-Visual Basic Specification / Attributes / **Attribute Blocks**  
+^*Copyright (c) Microsoft. All Rights Reserved. Licensed under the Apache License, Version 2.0.  See [License.txt](https://github.com/dotnet/roslyn/blob/master/License.txt) for license information.*^    
+[Visual Basic Specification]("spec/VisualBasic-Specification.md") / Attributes / **Attribute Blocks**  
 **Sub-Topics:** [Attribute Classes](Attribute-Classes), **[Attribute Blocks](#Attribrute-Blocks)**, [Attribute Names](Attribute-Names), [Attribute Arguments](#Attribute-Arguments)
 
 ----

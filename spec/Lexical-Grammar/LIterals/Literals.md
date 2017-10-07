@@ -1,4 +1,8 @@
-[Lexical Grammar](Lexical-Grammar) / **Literals**
+^*Copyright (c) Microsoft. All Rights Reserved. Licensed under the Apache License, Version 2.0.  See [License.txt](https://github.com/dotnet/roslyn/blob/master/License.txt) for license information.*^    
+[Specification]("vblang/spec/VisualBasic-Specification.md") / [Lexical Grammar](Lexical-Grammar) / **Literals**
+
+---
+
 ## Literals
 ```antlr
 Literal
@@ -17,8 +21,8 @@ A *literal* is a textual representation of a particular value of a type.
   * **[Boolean](#Boolean-Literal)**
   * [Integer](Literals-Integer#Integer-Literal)    
   * [Floating Point](Literals-FloatingPoint#Integer-Literal)
-  * [String](Literals-String#String-Literal)**
-  * [Character](Literals-String#Character-Literal)**
+  * [String](Literals-String#String-Literal)
+  * [Character](Literals-String#Character-Literal)
   * [Date](Literals-Date#Date-Literal)
 ---
 

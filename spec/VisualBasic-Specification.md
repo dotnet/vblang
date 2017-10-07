@@ -1,19 +1,142 @@
-# Visual Basic Specification (version 15.5)
+*Copyright (c) Microsoft. All Rights Reserved. Licensed under the Apache License, Version 2.0.  See [License.txt](https://github.com/dotnet/roslyn/blob/master/License.txt) for license information.*
 
-----
+# Visual Basic Language Specification (verion 15.5)
+*(This document is also available for download: [vb.pdf](http://ljw1004.github.io/vbspec/Visual%20Basic%20Language%20Specification.pdf?raw=true) and [vb.docx](http://ljw1004.github.io/vbspec/Visual%20Basic%20Language%20Specification.docx?raw=true))*
 
-## Contents
+* [Introduction](introduction.md#introduction)
+    * [Grammar Notation](introduction.md#grammar-notation)
+    * [Compatibility](introduction.md#compatibility)
+* [Lexical Grammar](lexical-grammar.md#lexical-grammar)
+    * [Characters and Lines](lexical-grammar.md#characters-and-lines)
+    * [Identifiers](lexical-grammar.md#identifiers)
+    * [Keywords](lexical-grammar.md#keywords)
+    * [Literals](Lexical-Grammar\Literals\Literals.md#Literals)
+      * Nothing
+      * Boolean
+      * Integer
+      * Floating Point
+      * Character
+      * String 
+    * [Separators](lexical-grammar.md#separators)
+    * [Operator Characters](lexical-grammar.md#operator-characters)
+* [Preprocessing Directives](preprocessing-directives.md#preprocessing-directives)
+    * [Conditional Compilation](preprocessing-directives.md#conditional-compilation)
+    * [External Source Directives](preprocessing-directives.md#external-source-directives)
+    * [Region Directives](preprocessing-directives.md#region-directives)
+    * [External Checksum Directives](preprocessing-directives.md#external-checksum-directives)
+* [General Concepts](general-concepts.md#general-concepts)
+    * [Declarations](general-concepts.md#declarations)
+    * [Scope](general-concepts.md#scope)
+    * [Inheritance](general-concepts.md#inheritance)
+    * [Implementation](general-concepts.md#implementation)
+    * [Polymorphism](general-concepts.md#polymorphism)
+    * [Accessibility](general-concepts.md#accessibility)
+    * [Type and Namespace Names](general-concepts.md#type-and-namespace-names)
+    * [Variables](general-concepts.md#variables)
+    * [Generic Types and Methods](general-concepts.md#generic-types-and-methods)
+* [Attributes](attributes.md#attributes)
+    * [Attribute Classes](attributes.md#attribute-classes)
+    * [Attribute Blocks](attributes.md#attribute-blocks)
+      * Attribute Names
+      * Attribute Arguments 
+* [Source Files and Namespaces](source-files-and-namespaces.md#source-files-and-namespaces)
+    * [Program Startup and Termination](source-files-and-namespaces.md#program-startup-and-termination)
+    * [Compilation Options](source-files-and-namespaces.md#compilation-options)
+    * [Imports Statement](source-files-and-namespaces.md#imports-statement)
+    * [Namespaces](source-files-and-namespaces.md#namespaces)
+* [Types](types.md#types)
+    * [Value Types and Reference Types](types.md#value-types-and-reference-types)
+    * [Interface Implementation](types.md#interface-implementation)
+    * [Primitive Types](types.md#primitive-types)
+    * [Enumerations](types.md#enumerations)
+    * [Classes](types.md#classes)
+    * [Structures](types.md#structures)
+    * [Standard Modules](types.md#standard-modules)
+    * [Interfaces](types.md#interfaces)
+    * [Arrays](types.md#arrays)
+    * [Delegates](types.md#delegates)
+    * [Partial types](types.md#partial-types)
+    * [Constructed Types](types.md#constructed-types)
+    * [Special Types](types.md#special-types)
+* [Conversions](conversions.md#conversions)
+    * [Implicit and Explicit Conversions](conversions.md#implicit-and-explicit-conversions)
+    * [Boolean Conversions](conversions.md#boolean-conversions)
+    * [Numeric Conversions](conversions.md#numeric-conversions)
+    * [Reference Conversions](conversions.md#reference-conversions)
+    * [Array Conversions](conversions.md#array-conversions)
+    * [Value Type Conversions](conversions.md#value-type-conversions)
+    * [String Conversions](conversions.md#string-conversions)
+    * [Widening Conversions](conversions.md#widening-conversions)
+    * [Narrowing Conversions](conversions.md#narrowing-conversions)
+    * [Type Parameter Conversions](conversions.md#type-parameter-conversions)
+    * [User-Defined Conversions](conversions.md#user-defined-conversions)
+    * [Native Conversions](conversions.md#native-conversions)
+    * [Dominant Type](conversions.md#dominant-type)
+* [Type Members](type-members.md#type-members)
+    * [Interface Method Implementation](type-members.md#interface-method-implementation)
+    * [Methods](type-members.md#methods)
+    * [Constructors](type-members.md#constructors)
+    * [Events](type-members.md#events)
+    * [Constants](type-members.md#constants)
+    * [Instance and Shared Variables](type-members.md#instance-and-shared-variables)
+    * [Properties](type-members.md#properties)
+    * [Operators](type-members.md#operators)
+* [Statements](statements.md#statements)
+    * [Control Flow](statements.md#control-flow)
+    * [Local Declaration Statements](statements.md#local-declaration-statements)
+    * [With Statement](statements.md#with-statement)
+    * [SyncLock Statement](statements.md#synclock-statement)
+    * [Event Statements](statements.md#event-statements)
+    * [Assignment Statements](statements.md#assignment-statements)
+    * [Invocation Statements](statements.md#invocation-statements)
+    * [Conditional Statements](statements.md#conditional-statements)
+    * [Loop Statements](statements.md#loop-statements)
+    * [Exception-Handling Statements](statements.md#exception-handling-statements)
+    * [Branch Statements](statements.md#branch-statements)
+    * [Array-Handling Statements](statements.md#array-handling-statements)
+    * [Using statement](statements.md#using-statement)
+    * [Await Statement](statements.md#await-statement)
+    * [Yield Statement](statements.md#yield-statement)
+* [Expressions](expressions.md#expressions)
+    * [Expression Classifications](expressions.md#expression-classifications)
+    * [Constant Expressions](expressions.md#constant-expressions)
+    * [Late-Bound Expressions](expressions.md#late-bound-expressions)
+    * [Simple Expressions](expressions.md#simple-expressions)
+    * [Type Expressions](expressions.md#type-expressions)
+    * [Member Access Expressions](expressions.md#member-access-expressions)
+    * [Dictionary Member Access Expressions](expressions.md#dictionary-member-access-expressions)
+    * [Invocation Expressions](expressions.md#invocation-expressions)
+    * [Overload Resolution](overload-resolution.md)
+      * [Specificity of members/types given an argument list](overload-resolution.md#specificity-of-memberstypes-given-an-argument-list)
+      * [Genericity](overload-resolution.md#genericity)
+      * [Applicability to Argument List](overload-resolution.md#applicability-to-argument-list)
+      * [Passing Arguments, and Picking Arguments for Optional Parameters](overload-resolution.md#passing-arguments-and-picking-arguments-for-optional-parameters)
+      * [Conditional Methods](overload-resolution.md#conditional-methods)
+      * [Type Argument Inference](overload-resolution.md#type-argument-inference)
+    * [Index Expressions](expressions.md#index-expressions)
+    * [New Expressions](expressions.md#new-expressions)
+    * [Cast Expressions](expressions.md#cast-expressions)
+    * [Operator Expressions](expressions.md#operator-expressions)
+    * [Arithmetic Operators](expressions.md#arithmetic-operators)
+    * [Relational Operators](expressions.md#relational-operators)
+    * [Like Operator](expressions.md#like-operator)
+    * [Concatenation Operator](expressions.md#concatenation-operator)
+    * [Logical Operators](expressions.md#logical-operators)
+    * [Shift Operators](expressions.md#shift-operators)
+    * [Boolean Expressions](expressions.md#boolean-expressions)
+    * [Lambda Expressions](expressions.md#lambda-expressions)
+    * [Query Expressions](expressions.md#query-expressions)
+    * [Conditional Expressions](expressions.md#conditional-expressions)
+    * [XML Literal Expressions](expressions.md#xml-literal-expressions)
+    * [XML Member Access Expressions](expressions.md#xml-member-access-expressions)
+    * [Await Operator](expressions.md#await-operator)
+* [Documentation Comments](documentation-comments.md#documentation-comments)
+    * [Documentation Comment Format](documentation-comments.md#documentation-comment-format)
+    * [Recommended tags](documentation-comments.md#recommended-tags)
+    * [ID Strings](documentation-comments.md#id-strings)
+    * [Documentation comments example](documentation-comments.md#documentation-comments-example)
+* Grammar: [vb.html](http://ljw1004.github.io/vbspec/vb.html). Or download in ANTLR format: [vb.g4](http://ljw1004.github.io/vbspec/vb.g4?raw=true).
 
-* Lexical Grammar
-  * Literals
-    * Nothing
-    * Boolean 
-    * Integer
-    * Floating Point
-    * Character
-    * String
-* Attributes
-  * Attribute Classes
-  * Attribute Blocks
-    * Attribute Names
-    * Attribute Arguments 
+
+*Copyright (c) Microsoft. All Rights Reserved. Licensed under the Apache License, Version 2.0.  See [License.txt](https://github.com/dotnet/roslyn/blob/master/License.txt) for license information.*
+ 

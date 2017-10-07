@@ -1,3 +1,4 @@
+^*Copyright (c) Microsoft. All Rights Reserved. Licensed under the Apache License, Version 2.0.  See [License.txt](https://github.com/dotnet/roslyn/blob/master/License.txt) for license information.*^    
 [Lexical Grammar](/Lexical-Grammar) / [Literals](Literals) / Date Literal    
 Related: [Nothing Literal](Literals#Nothing-Literal), [Boolean Literal](Literals#Boolean-Literal), [Integer](#Integer-Literal), [Floating Point](Literals-FloatingPoint#Integer-Literal), [String](Literals-String#String-Literal), [Character](Literals-String#Character-Literal), **[Date](Literals-Date#Date-Literal)**
 

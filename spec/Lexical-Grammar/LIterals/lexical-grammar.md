@@ -1,3 +1,4 @@
+^*Copyright (c) Microsoft. All Rights Reserved. Licensed under the Apache License, Version 2.0.  See [License.txt](https://github.com/dotnet/roslyn/blob/master/License.txt) for license information.*^    
 [Specification]() / **Lexical Grammer**    
 **Sub-Topics:** [Characters and Lines](), [Line Terminators](), [Line Continuations](), [White Space](), [Token]() 
 
@@ -16,10 +17,11 @@ LogicalLineElement :   WhiteSpace | LineContinuation | Token  ;
 Token              :   Identifier | Keyword | Literal | Separator | Operator ;
 ```
 
-  * Characters and Lines
-  * Line Terminators
-  * Line Continuation
-  * White Space
+  * [Characters and Lines](#Characters-and-lines)
+  * [Line Terminators](#Line-Terminators)
+  * [Line Continuation](#Line-Continuations)
+  * [White Space](#White-Space)
+  * [Comments](#Comments)
   * Token
     * Identifiers
     * Keyword
