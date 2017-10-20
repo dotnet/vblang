@@ -1,4 +1,5 @@
-# Visual Basic Language Design Meeting - 2017.10.18
+# Visual Basic Language Design Meeting
+October 18th, 2017
 
 ### Agenda
 * Proposal #101 - JSON Literals
@@ -7,7 +8,7 @@
     * Proposal #184 - Tagged String literals (#27)
     * JSON types for JSON IntelliSense
     * XML types for XML IntelliSense
-* Proposal #XXX - `Try` assignment
+* Proposal #190 - `Try` assignment
 
 ## Proposal #101 - JSON Literals
 
@@ -116,92 +117,8 @@ Dim c = b!city
 * This is one end of the spectrum of providing a better tooling experience for untyped data over the wire. Type providers are on the other end.
 * We might be able to do a lot with no compiler changes and should investigate with IDE team.
 
-## Proposal #XXX - `Try` assignment
+## Proposal #190 - `Try` assignment
 Related: #175, #159 #132 #67 #60
-
-A general solution that solves both multiple return values and the popular .NET `TryXYZ` pattern eludes me. Though it would seem that the "Try" pattern would benefit from using either nullable value types or tuples, neither approach is satisfactory.
-
-Nullables
-``` VB.NET
-Dim i As Integer? = Integer.TryParseNullable(s)
-
-If i IsNot Nothing Then
-    Dim i2 = i.Value ' To avoid the on-going tax of unwrapping the null.
-End If
-
-myDictionary(myKey) = Nothing
-
-Dim myValue = myDictionary.TryGetValueNullable(s)
-' Null was a valid value here.
-```
-
-Tuples
-``` VB.NET
-Dim r = Integer.TryParseTuple(s)
-
-If r.Succeeded Then
-    Dim i = r.Value ' To avoid the on-going tax of unwrapping the tuple.
-End If
-
-Dim (succeeded, result) = myDictionary.TryGetValueTuple(s)
-
-If succeeded Then
-    ' Do whatever.
-End If
-
-' succeeded just hangs around forever despite its transient role having long ago ended. Lamentations. 
-```
-
-It turns out that `ByRef` and `Out` remain the preferred solution to this problem. This leads customers to ask us for better support for `Out` vars like C# has. However, VB has long shied away in general from inline assignment and inline declarations and I am loathe to break from this. I find keeping declarations and assignments at the statement level to simplify code and indeed the use of inline assignment trickery in particular is frowned upon even in curly brace languages. 
-
-After some thought, I realize that the reason general data-based solutions don't address this problem is because the "Try" pattern simultaneously conveys _both_ data-flow _and_ control-flow. It's meant to be used in conjunction with an `If` or other control-flow statement and the assignment of a value is relegated to a **side-effect** of the control-flow. I propose that a special solution is needed for this pattern that recognizes the duality: `Try` assignment/initialization.
-
-Single-line
-``` VB.NET
-Dim offset = Try Integer.TryParse(offsetString) Else Throw New FormatException
-Dim count = Try Integer.TryParse(countString) Else Throw New FormatException
-```
-
-Fallback
-``` VB.NET
-Function Factorial(n As ULong) As ULong
-    Static cache = New Dictionary(Of ULong, ULong)
-
-    Dim result As ULong
-
-    If n = 0 Then
-        result = 1
-    Else
-        result = Try cache.TryGetValue(n) Else
-                     result = n * Factorial(n - 1)
-                     cache(n) = result
-                 End Try
-    End If
-
-    Return result
-End Function
-```
-
-Positive consequence/early-out
-``` VB.NET
-Dim root = Try document.TryGetRoot(cancellationToken) Then
-               Return root ' Early return.
-           End Try
-
-' Do something heavy.
-```
-
-The above examples reverse the inversion the "Try" pattern forces on developers by making the control-flow aspect subordinate to the data-flow aspect. This allows type-inference to work as normal and keep variable declarations and assignments at the statement level. I considered other designs made this a new kind of statement but all of them lost those benefits.
-
-The specifics of what patterns the feature would work on (nullables, tuples, out-vars) haven't been specified. But if designed correctly this could yield a very natural transformation for an asynchronous try:
-
-``` VB.NET
-Dim customer = Try Await repository.TryGetCustomer(id) Else Return "Not Found"
-
-Return customer.Name 
-```
-
-Such a feature, combined with tuples completely eliminates the need for `ByRef` and `Out` arguments outside of performance-based structure copy-avoidance; a very uncommon scenario.
 
 **Feedback**
 * Are side-effects really that bad?
