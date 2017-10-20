@@ -2,15 +2,15 @@
 October 18th, 2017
 
 ### Agenda
-* Proposal #101 - JSON Literals
-    * Pattern matching
+* Proposal [#101](https://github.com/dotnet/vblang/issues/101): JSON Literals
+  * Pattern matching
 * Annotated types
-    * Proposal #184 - Tagged String literals (#27)
-    * JSON types for JSON IntelliSense
-    * XML types for XML IntelliSense
-* Proposal #190 - `Try` assignment
+  * Proposal [#184](https://github.com/dotnet/vblang/issues/184): Tagged String literals (Related [#27](https://github.com/dotnet/vblang/issues/27): Guid literals)
+  * JSON types for JSON IntelliSense
+  * XML types for XML IntelliSense
+* Proposal [#190](https://github.com/dotnet/vblang/issues/190): `Try` assignment
 
-## Proposal #101 - JSON Literals
+## Proposal [#101](https://github.com/dotnet/vblang/issues/101) - JSON Literals
 
 JSON is the _lingua franca_ of the cloud. First-class JSON support could be a strong attractant for first-time developers. The power of copy/paste/modify to jump start a project can't be overstated.
 
@@ -35,7 +35,7 @@ JSON is the _lingua franca_ of the cloud. First-class JSON support could be a st
   * The problem is the nested case. How do we know the List type? Do you restate the type or have a separate list syntax.
 
 ### JSON Pattern Matching?
-Related: #139 - XML Patterns
+Related: [#139](https://github.com/dotnet/vblang/issues/139) - XML Patterns
 
 I think the principle for making a new "literal" or construction pattern is when the ceremony of creating an object(-graph) obscures the structure of the data itself. Therefore, I proposal the principle for introducing a pattern is when the ceremony of _inspecting_ and object(-graph) obscures the structure of the data.
 
@@ -71,8 +71,8 @@ In the above example, each possible contact kind has different content. Inspecti
 
 ## Annotated types
 
-### Proposal #184
-Related: #27 - GUID Literals
+### Proposal [#184](https://github.com/dotnet/vblang/issues/184)
+Related: [#27](https://github.com/dotnet/vblang/issues/27) - GUID Literals
 
 After discussing the scenario for GUID literals with customers I don't believe they are necessary. There isn't a good case to be made for an expression typed as `System.Guid` as the dominant use case (attributes) can only take compile-time/CLR constants, i.e. strings. The only notable benefit I've heard from users is _validation_. This naturally leads one to consider an analyzer. The problem with the analyzer approach today is that 1) such an analyzer must inspect every string literal in the program, 2) such an analyzer would have to determine if a erroneously typed string were _intended_ to be a GUID before validating it.
 
@@ -117,8 +117,8 @@ Dim c = b!city
 * This is one end of the spectrum of providing a better tooling experience for untyped data over the wire. Type providers are on the other end.
 * We might be able to do a lot with no compiler changes and should investigate with IDE team.
 
-## Proposal #190 - `Try` assignment
-Related: #175, #159 #132 #67 #60
+## Proposal [#190](https://github.com/dotnet/vblang/issues/190) - `Try` assignment
+Related: [#175](https://github.com/dotnet/vblang/issues/175), [#159](https://github.com/dotnet/vblang/issues/159), [#132](https://github.com/dotnet/vblang/issues/132), [#67](https://github.com/dotnet/vblang/issues/67), [#60](https://github.com/dotnet/vblang/issues/60)
 
 **Feedback**
 * Are side-effects really that bad?
