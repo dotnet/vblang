@@ -24,3 +24,17 @@ Overview of meetings and agendas for 2017
   * Proposal [#152](https://github.com/dotnet/vblang/issues/152): `Out` arguments
 * [30th](vbldm-notes-2017.08.30.md)
   * Nullable reference types
+
+**September**
+* 27th
+
+**October**
+* 4th
+* [18th](vbldm-notes-2017.10.18.md)
+  * Proposal [#101](https://github.com/dotnet/vblang/issues/101): JSON Literals
+    * Pattern matching
+  * Annotated types
+    * Proposal [#184](https://github.com/dotnet/vblang/issues/184): Tagged String literals (Related [#27](https://github.com/dotnet/vblang/issues/27): Guid literals)
+    * JSON types for JSON IntelliSense
+    * XML types for XML IntelliSense
+  * Proposal [#190](https://github.com/dotnet/vblang/issues/190): `Try` assignment
