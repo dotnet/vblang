@@ -124,3 +124,4 @@ Related: [#175](https://github.com/dotnet/vblang/issues/175), [#159](https://git
 * Are side-effects really that bad?
 * Syntax is weird because the right-hand side of the assignment can assign to the thing it's initializing; should it instead be forced to return a different value?
   * But how would we represent the case where a failed "Try" should result in throwing or early exit?
+* Swift accomplishes this design with `if let` for positive cases and `guard let` for negative cases. Might that be a better design to explore?
