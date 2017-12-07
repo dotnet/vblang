@@ -38,3 +38,30 @@ Overview of meetings and agendas for 2017
     * JSON types for JSON IntelliSense
     * XML types for XML IntelliSense
   * Proposal [#190](https://github.com/dotnet/vblang/issues/190): `Try` assignment
+
+**November**
+* [15th](vbldm-notes-2017.11.15.md)
+  * Proposal [#195](https://github.com/dotnet/vblang/issues/195) - `Static` Property Variables
+  * Proposal [#196](https://github.com/dotnet/vblang/issues/196) - Implicit Property Backing Fields
+  * Proposal [#197](https://github.com/dotnet/vblang/issues/197) - Inferred `Set` Parameter Type
+  * Scenario [#219](https://github.com/dotnet/vblang/issues/219) - Implementing INotifyPropertyChanged is Tedious
+    * Proposal [#107](https://github.com/dotnet/vblang/issues/107) - Replaceable Members
+    * Proposal [#198](https://github.com/dotnet/vblang/issues/198) - Bindable Classes and Properties
+    * Proposal [#107](https://github.com/dotnet/vblang/issues/194) - `WithPropertyEvents` Modifier to Enable Easy INotifyPropertyChanged Implementations
+    
+**December**
+* [6th](vbldm-notes-2017.12.06.md)
+  * Proposal [#25](https://github.com/dotnet/vblang/issues/25) - Range `1 To 10 Step 2` Expressions
+    * _Related: [#180](https://github.com/dotnet/vblang/issues/180) - For-loop should use larger type to avoid overflow exception_
+  * Proposal [#215](https://github.com/dotnet/vblang/issues/215) - Allow Attributes on Generic Type Parameters
+  * Proposal [#170](https://github.com/dotnet/vblang/issues/170) - New Tie-Breaker Rule for Resolving Ambiguity Between Overloads Which Differ By Refness of Arguments
+  * Proposal [#218](https://github.com/dotnet/vblang/issues/218) - Expression tree rewrite for string comparison in VB should product an operator invocation, not a method call to Operators.CompareString
+    * _Related: [#193](https://github.com/dotnet/vblang/issues/193) - Option Compare Ordinal (and OrdinalIgnoreCase?)_
+  * Proposal [#48](https://github.com/dotnet/vblang/issues/48) - Multiple `For` or `For Each` Control Variables Per Statement
+    * _Related: [#104](https://github.com/dotnet/vblang/issues/104) - Extend `For Each` Statement with Query Comprehensions_
+  * Proposal [#186](https://github.com/dotnet/vblang/issues/48) - `Exit For j` Statement to Break Out of Nested `For` and `For Each` Loops
+  * Proposal [#102](https://github.com/dotnet/vblang/issues/102) - Support Top-Level Statements in a Single Entry-Point File
+  * Scenario [#219](https://github.com/dotnet/vblang/issues/219) - Implementing INotifyPropertyChanged is Tedious
+    * Proposal [#107](https://github.com/dotnet/vblang/issues/107) - Replaceable Members
+    * Proposal [#198](https://github.com/dotnet/vblang/issues/198) - Bindable Classes and Properties
+    * Proposal [#107](https://github.com/dotnet/vblang/issues/194) - `WithPropertyEvents` Modifier to Enable Easy INotifyPropertyChanged Implementations
