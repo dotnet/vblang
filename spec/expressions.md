@@ -2850,13 +2850,13 @@ MultiLineLambda
     ;
 
 MultiLineFunctionLambda
-    : LambdaModifier* 'Function' ( OpenParenthesis ParameterList? CloseParenthesis )? ( 'As' TypeName )? LineTerminator
+    : LambdaModifier? 'Function' ( OpenParenthesis ParameterList? CloseParenthesis )? ( 'As' TypeName )? LineTerminator
       Block
       'End' 'Function'
     ;
 
 MultiLineSubLambda
-    : LambdaModifier* 'Sub' ( OpenParenthesis ParameterList? CloseParenthesis )? LineTerminator
+    : LambdaModifier? 'Sub' ( OpenParenthesis ParameterList? CloseParenthesis )? LineTerminator
       Block
       'End' 'Sub'
     ;
