@@ -1,7 +1,7 @@
 # Feature: Flags Enum Operators
 
 * [x] Proposed
-* [ ] Prototype: [Complete](https://github.com/PROTOTYPE_OWNER/roslyn/BRANCH_NAME)
+* [ ] Prototype: **Very Experimental** [Proof of Concept](https://github.com/AdamSpeight2008/roslyn-AdamSpeight2008/tree/EnumFlagExpression)
 * [ ] Implementation: [In Progress](https://github.com/dotnet/roslyn/BRANCH_NAME)
 * [ ] Specification: [Not Started](pr/1)
 
@@ -33,7 +33,7 @@ End Enum
   * **Clear**
     * `MyFlags = (MyFlags And Not Flags.Red)`
   
-It would good if we could define a set of generic extension methods that implement those functions.
+It would good be if we could define a set of generic extension methods that implement those functions.
 
 ```vbnet
 Imports System.Runtime.CompilerServices
@@ -74,7 +74,7 @@ We could us a non generic implementation, but that incurs a runtime reflection c
 This is proposal introduces the concept of a **Flags Enum Operator**.
 A Flags Enum operator consist of three parts
   * `Flags`
-    * The flags enum (or variable of a flags enum) being work on.
+    * The flags enum *(or variable of a flags enum)* being work on.
   * `!`
     * The operation being performed.
   * 'flag`
@@ -88,7 +88,7 @@ Initially one will be supported
     * This usage is analogous to `IsSet`, those returns a `Boolean`. 
     * `IsClr` is supported via negation `Not flags!flag` or comparing against `flags!flag = false`.
 
-Two other additional operator, are to be consider also;=
+Two other additional operator, are to be consider also;-
   * `flags!+flag`
     * This is analogous to `[Set](Of Fe As <Flags>Enum)(flags As Fe, Flag As Fe) As Fe`
   * `flags!-flag`
@@ -126,7 +126,7 @@ Should be relatively simple to extend existing support for dictionary lookup ope
 Existing usage `Dim results = Flags!Flag` results in an error.    
 `Error	BC30103	'!' requires its left operand to have a type parameter, class or interface type, but this operand has the type 'Main.Flags`
 
-So could extended under a feature flags, to preserve compatability.
+Would be enable via a feature flag, to preserve compatability.
 
 The operator `!+` and `!-` will require additional parsing code to support.
 
