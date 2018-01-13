@@ -85,7 +85,7 @@ A Flags Enum operator consist of three parts
 Initially one will be supported
   * `flags!flag` 
     * This borrows syntax from them dictionary lookup operator `!`.
-    * This usage is analogous to `IsSet`, those returns a `Boolean`. 
+    * This usage is analogous to `IsSet`, which returns a `Boolean`. 
     * `IsClr` is supported via negation `Not flags!flag` or comparing against `flags!flag = false`.
 
 Two other additional operator, are to be consider also;-
@@ -129,6 +129,59 @@ Existing usage `Dim results = Flags!Flag` results in an error.
 Would be enable via a feature flag, to preserve compatability.
 
 The operator `!+` and `!-` will require additional parsing code to support.
+
+### SyntaxNode
+```
+Syntax FlagsEnumOperatorToken Inherits SyntaxToken
+  DefaultFactory        = True
+  DefaultTrailingTrivia = None
+
+  NodeKinds
+    "!+" -> FlagsEnumSetToken
+    "!-" -> FlagsEnumClearToken
+    "!"  -> FlagsEnumIsSetToken
+  End NodeKinds
+
+
+End Syntax
+
+Partial Syntax FlagsEnumOperationExpressionSyntax Inherits ExpressionSyntax
+
+  NodeKinds
+    FlagsEnumOperationExpression
+  End NodeKinds
+
+   <Description>Then expression on the left-hand-side of the flags enum operator.</Description>
+   .EnumFlags?    As ExpressionSyntax 
+  
+   <Description></Description>
+  .OperatorToken As FlagsEnumOperatorTokrn
+
+   <Description>The member of the flags enum, after the flags enum operator.</Description>
+  .EnumFlag      As SimpleNameSyntax 
+End Syntax
+
+Enum FlagsEnumOperatorKind
+  .None  = 0
+   <Description>The "!" FlagsEnum Operator.</Description>
+  .IsSet = 1
+   <Description>The "!+" FlagsEnum Operator.</Description>
+  .[Set] = 2
+   <Description>The "!-" FlagsEnum Operator.</Description>
+  .Clear = 3
+End Enum
+```
+
+### BoundNode
+
+```
+Bound BoundFlagsEnumOperationExpressionSyntax Inherits ExpressionSyntax
+  Overrides Type       As TypeSymbol            (Null:= Disallow)
+            EnumFlags  As BoundExpression       (Null:= Disallow)
+            Op         As FlagsEnumOperatorKind (Null:= NotApplicable)
+            EnumFlag   As BoundExpression       (Null:= Disallow)
+End Bound
+```
 
 ## Advantages
 
