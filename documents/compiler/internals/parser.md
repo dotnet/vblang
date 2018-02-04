@@ -6,3 +6,4 @@ According to the syntactic rules of the VB.net language
 
 #### Hints & Tips
 
+  * [Parser Design Guidelines](https://github.com/dotnet/roslyn/blob/master/docs/compilers/Design/Parser.md)
