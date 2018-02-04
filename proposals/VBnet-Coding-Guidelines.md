@@ -1,4 +1,4 @@
-# FEATURE_NAME## VB.net Coding Guidelines
+# VB.net Coding Guidelines
  
  Coding Conventions
  
