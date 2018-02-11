@@ -1,14 +1,14 @@
 # Feature: Flags Enum Operators
 
 * [x] Proposed
-* [ ] Prototype: **Very Experimental** [Proof of Concept](https://github.com/AdamSpeight2008/roslyn-AdamSpeight2008/tree/EnumFlagExpression)
+* [x] Prototype: Alpha [Proof of Concept](https://github.com/AdamSpeight2008/roslyn-AdamSpeight2008/tree/EnumFlagExpression)
 * [ ] Implementation: [In Progress](https://github.com/dotnet/roslyn/BRANCH_NAME)
 * [ ] Specification: [Not Started](pr/1)
 
 ## Summary
 [summary]: #summary
 
-Simplifyy the usage of flags enums.
+Simplify the usage of flags enums.
 
 ## Motivation
 [motivation]: #motivation
