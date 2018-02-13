@@ -1,7 +1,13 @@
 # TypeOf Many
 
+* [x] VBLang Issue [#23](https://github.com/dotnet/vblang/issues/23)
 * [x] Proposed
-* [ ] Prototype: [Still A Work In Progress](https://github.com/AdamSpeight2008/roslyn-AdamSpeight2008/tree/master-typeof)
+* [x] Prototype: [Proof Of Concept](https://github.com/AdamSpeight2008/roslyn-AdamSpeight2008/tree/master_typeof2)
+  * [x] Syntax and Bound Nodes
+  * [x] Parser
+  * [x] Binder
+  * [x] Lowering
+  * [ ] Tooling Support  
 * [ ] Implementation: [In Progress](https://github.com/dotnet/roslyn/BRANCH_NAME)
 * [ ] Specification: [Not Started](pr/1)
 
@@ -42,7 +48,7 @@ TypeOfKeyword    ::= "TypeOf"
 TypeOfOperand    ::= (IsOperand | IsNotOperand )
 IsOperand        ::= "Is"
 IsNotOperand     ::= "IsNot"
-Target		 ::= TypeIdentifer
+Target           ::= TypeIdentifer
 ```
 The proposal is to extend the rule `Target` to 
 ```
