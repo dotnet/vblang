@@ -15,3 +15,7 @@ Overview of meetings and agendas for 2018
   * Issue [#37 Champion "Await in Catch and Finally"](https://github.com/dotnet/vblang/issues/37)
   * Issue [#228 - Default property for reading and setting bit flags](https://github.com/dotnet/vblang/issues/228) (and others)
   * [C# proposal: Default interface methods](https://github.com/dotnet/csharplang/blob/master/proposals/default-interface-methods.md)
+* [28th](vbldm-notes-2018.02.28)
+  * Implications of C# Range on Visual Basic
+  * Issue [#37 -Champion "Await in Catch and Finally"](https://github.com/dotnet/vblang/issues/37)
+  * C# Issue [#967 Proposal for tuple equality/inequality comparisons](https://github.com/dotnet/csharplang/pull/967)
