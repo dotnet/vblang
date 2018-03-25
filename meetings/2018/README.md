@@ -19,3 +19,9 @@ Overview of meetings and agendas for 2018
   * Implications of C# Range on Visual Basic
   * Issue [#37 -Champion "Await in Catch and Finally"](https://github.com/dotnet/vblang/issues/37)
   * C# Issue [#967 Proposal for tuple equality/inequality comparisons](https://github.com/dotnet/csharplang/pull/967)
+* [28th](vbldm-notes-2018.03.21.md)
+  * MVP Summit recap
+  * Issue #86 [Optimize conversions from calls to Int/Fix functions and System.Math methods known to return whole Single/Double values to native opcodes](https://github.com/dotnet/vblang/issues/86)
+  * Issue #280 [Can The Visual Basic DLL Be Open Sourced?](https://github.com/dotnet/vblang/issues/280)
+  * Issue #282 [An update from the Design Safari on the `INotifyPropertyChanged` scenario](https://github.com/dotnet/vblang/issues/282)
+  * Anthony D. Green attended as a guest!
