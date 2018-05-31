@@ -1,3 +1,9 @@
+^*Copyright (c) Microsoft. All Rights Reserved. Licensed under the Apache License, Version 2.0.  See [License.txt](https://github.com/dotnet/roslyn/blob/master/License.txt) for license information.*^    
+[Specification]() / **Lexical Grammer**    
+**Sub-Topics:** [Characters and Lines](), [Line Terminators](), [Line Continuations](), [White Space](), [Token]() 
+
+-------
+
 # Lexical Grammar
 
 Compilation of a Visual Basic program first involves translating the raw stream of Unicode characters into an ordered set of lexical tokens. Because the Visual Basic language is not free-format, the set of tokens is then further divided into a series of logical lines. A *logical line* spans from either the start of the stream or a line terminator through to the next line terminator that is not preceded by a line continuation or through to the end of the stream.
@@ -5,28 +11,26 @@ Compilation of a Visual Basic program first involves translating the raw stream 
 __Note.__ With the introduction of XML literal expressions in version 9.0 of the language, Visual Basic no longer has a distinct lexical grammar in the sense that Visual Basic code can be tokenized without regard to the syntactic context. This is due to the fact that XML and Visual Basic have different lexical rules and the set of lexical rules in use at any particular time depends on what syntactic construct is being processed at that moment. This specification retains this lexical grammar section as a guide to the lexical rules of regular Visual Basic code.
 
 ```antlr
-LogicalLineStart
-    : LogicalLine*
-    ;
-
-LogicalLine
-    : LogicalLineElement* Comment? LineTerminator
-    ;
-
-LogicalLineElement
-    : WhiteSpace
-    | LineContinuation
-    | Token
-    ;
-
-Token
-    : Identifier
-    | Keyword
-    | Literal
-    | Separator
-    | Operator
-    ;
+LogicalLineStart   :   LogicalLine*  ;
+LogicalLine        :   LogicalLineElement* Comment? LineTerminator  ;
+LogicalLineElement :   WhiteSpace | LineContinuation | Token  ;
+Token              :   Identifier | Keyword | Literal | Separator | Operator ;
 ```
+
+  * [Characters and Lines](#Characters-and-lines)
+  * [Line Terminators](#Line-Terminators)
+  * [Line Continuation](#Line-Continuations)
+  * [White Space](#White-Space)
+  * [Comments](#Comments)
+  * Token
+    * Identifiers
+    * Keyword
+    * Literal
+    * Separator
+    * Operator 
+
+----
+
 
 ## Characters and Lines
 
@@ -37,6 +41,8 @@ Character:
     '<Any Unicode character except a LineTerminator>'
     ;
 ```
+
+----
 
 ### Line Terminators
 
@@ -52,6 +58,7 @@ LineTerminator
     | '<Unicode 0x2029>'
     ;
 ```
+----
 
 ### Line Continuation
 
@@ -163,6 +170,7 @@ y
 
 Line continuations will not be inferred in conditional compilation contexts. (__Note.__ This last restriction is required because text in conditional compilation blocks that are not compiled do not have to be syntactically valid. Thus, text in the block might accidentally get "picked up" by the conditional compilation statement, especially as the language gets extended in the future.)
 
+---
 
 ### White Space
 
@@ -170,96 +178,101 @@ Line continuations will not be inferred in conditional compilation contexts. (__
 Line terminators are not considered white space.)
 
 ```antlr
-WhiteSpace
-    : '<Unicode class Zs>'
-    | '<Unicode Tab 0x0009>'
-    ;
+WhiteSpace : '<Unicode class Zs>' | '<Unicode Tab 0x0009>' ;    ;
 ```
+
+----
 
 ### Comments
 
-A *comment* begins with a single-quote character or the keyword `REM`. A single-quote character is either an ASCII single-quote character, a Unicode left single-quote character, or a Unicode right single-quote character. Comments can begin anywhere on a source line, and the end of the physical line ends the comment. The compiler ignores the characters between the beginning of the comment and the line terminator. Consequently, comments cannot extend across multiple lines by using line continuations.
+A *comment* begins with
+  *  a single-quote character    
+     A single-quote character is either
+     * An ASCII single-quote character.
+     * A Unicode left single-quote character.
+     * A Unicode right single-quote character.   
+  *  the keyword `REM`.    
+Comments can begin anywhere on a source line, and the end of the physical line ends the comment.    
+The compiler ignores the characters between the beginning of the comment and the line terminator.     
+Consequently, comments cannot extend across multiple lines by using line continuations.
 
 ```antlr
-Comment
-    : CommentMarker Character*
-    ;
+Comment              :   CommentMarker Character* ;
+CommentMarker        :   SingleQuoteCharacter | 'REM'  ;
+SingleQuoteCharacter :   '\'' | '<Unicode 0x2018>' | '<Unicode 0x2019>' ;
+```
 
-CommentMarker
-    : SingleQuoteCharacter
-    | 'REM'
-    ;
+---
 
-SingleQuoteCharacter
-    : '\''
-    | '<Unicode 0x2018>'
-    | '<Unicode 0x2019>'
+### Separators
+
+The following ASCII characters are separators:
+
+```antlr
+Separator
+    : '(' | ')' | '{' | '}' | '!' | '#' | ',' | '.' | ':' | '?'
     ;
 ```
+
+---
+
+### Operator Characters
+
+The following ASCII characters or character sequences denote operators:
+
+```antlr
+Operator
+    : '&' | '*' | '+' | '-' | '/' | '\\' | '^' | '<' | '=' | '>'
+    ;
+---
 
 ## Identifiers
 
-An *identifier* is a name. Visual Basic identifiers conform to the Unicode Standard Annex 15 with one exception: identifiers may begin with an underscore (connector) character. If an identifier begins with an underscore, it must contain at least one other valid identifier character to disambiguate it from a line continuation.
+An *identifier* is a name.
+ Visual Basic identifiers conform to the Unicode Standard Annex 15
+  * with **one exception**:
+     *  identifiers may begin with an underscore (connector) character.    
+        If an identifier begins with an underscore,
+        * it must contain at least one other valid identifier character.    
+        To disambiguate it from a line continuation.
 
 ```antlr
-Identifier
-    : NonEscapedIdentifier TypeCharacter?
-    | Keyword TypeCharacter
-    | EscapedIdentifier
-    ;
+Identifier :   NonEscapedIdentifier TypeCharacter?
+             | Keyword TypeCharacter
+             | EscapedIdentifier  ;
 
-NonEscapedIdentifier
-    : '<Any IdentifierName but not Keyword>'
-    ;
+NonEscapedIdentifier :   '<Any IdentifierName but not Keyword>'  ;
+EscapedIdentifier    :   '[' IdentifierName ']' ;
+IdentifierName       :   IdentifierStart IdentifierCharacter*  ;
+IdentifierStart      :   AlphaCharacter
+                       | UnderscoreCharacter IdentifierCharacter ;
 
-EscapedIdentifier
-    : '[' IdentifierName ']'
-    ;
-
-IdentifierName
-    : IdentifierStart IdentifierCharacter*
-    ;
-
-IdentifierStart
-    : AlphaCharacter
-    | UnderscoreCharacter IdentifierCharacter
-    ;
-
-IdentifierCharacter
-    : UnderscoreCharacter
-    | AlphaCharacter
-    | NumericCharacter
-    | CombiningCharacter
-    | FormattingCharacter
-    ;
-
-AlphaCharacter
-    : '<Unicode classes Lu,Ll,Lt,Lm,Lo,Nl>'
-    ;
-
-NumericCharacter
-    : '<Unicode decimal digit class Nd>'
-    ;
-
-CombiningCharacter
-    : '<Unicode combining character classes Mn, Mc>'
-    ;
-
-FormattingCharacter
-    : '<Unicode formatting character class Cf>'
-    ;
-
-UnderscoreCharacter
-    : '<Unicode connection character class Pc>'
-    ;
-
-IdentifierOrKeyword
-    : Identifier
-    | Keyword
-    ;
+IdentifierCharacter  :   UnderscoreCharacter
+                       | AlphaCharacter
+                       | NumericCharacter
+                       | CombiningCharacter
+                       | FormattingCharacter  ;
+AlphaCharacter       :   '<Unicode classes Lu,Ll,Lt,Lm,Lo,Nl>' ;
+NumericCharacter     :   '<Unicode decimal digit class Nd>'    ;
+CombiningCharacter   :   '<Unicode combining character classes Mn, Mc>' ;
+FormattingCharacter  :   '<Unicode formatting character class Cf>' ;
+UnderscoreCharacter  :   '<Unicode connection character class Pc>' ;
+IdentifierOrKeyword  :   Identifier
+                       | Keyword  ;
 ```
 
-Regular identifiers may not match keywords, but escaped identifiers or identifiers with a type character can. An *escaped identifier* is an identifier delimited by square brackets. Escaped identifiers follow the same rules as regular identifiers except that they may match keywords and may not have type characters.
+Identifiers may not match keywords unless
+  * they are escaped.
+    * An *escaped identifier* is an identifier delimited by square brackets.
+    * Escaped identifiers follow the same rules as regular identifiers.
+    * May match keywords
+    * May not have Type Characters.
+  * or folled by a type character 
+  
+Identifiers are case insensitive, so two identifiers are considered to be the same identifier if they differ only in case.    
+(__Note.__ The Unicode Standard one-to-one case mappings are used when comparing identifiers and any locale-specific case mappings are ignored.)
+
+**Example**
 
 This example defines a class named `class` with a shared method named `shared` that takes a parameter named `boolean` and then calls the method.
 
@@ -281,8 +294,7 @@ Module [module]
 End Module
 ```
 
-Identifiers are case insensitive, so two identifiers are considered to be the same identifier if they differ only in case. (__Note.__ The Unicode Standard one-to-one case mappings are used when comparing identifiers and any locale-specific case mappings are ignored.)
-
+----
 
 ### Type Characters
 
@@ -353,6 +365,7 @@ End Module
 
 The type character `!` presents a special problem in that it can be used both as a type character and as a separator in the language. To remove ambiguity, a `!` character is a type character as long as the character that follows it cannot start an identifier. If it can, then the `!` character is a separator, not a type character.
 
+---
 
 ## Keywords
 
@@ -402,6 +415,8 @@ Keyword
     ;
 ```
 
+---
+
 ## Literals
 
 A *literal* is a textual representation of a particular value of a type. Literal types include Boolean, integer, floating point, string, character, and date.
@@ -430,7 +445,17 @@ BooleanLiteral
 
 ### Integer Literals
 
-Integer literals can be decimal (base 10), hexadecimal (base 16), or octal (base 8). A decimal integer literal is a string of decimal digits (0-9). A hexadecimal literal is `&H` followed by a string of hexadecimal digits (0-9, A-F). An octal literal is `&O` followed by a string of octal digits (0-7). Decimal literals directly represent the decimal value of the integral literal, whereas octal and hexadecimal literals represent the binary value of the integer literal (thus, `&H8000S` is -32768, not an overflow error).
+Integer literals can be decimal (base 10), hexadecimal (base 16), or octal (base 8), or binary (base 2).
+ * A decimal integer literal is a string of decimal digits (0-9).
+ * A hexadecimal literal is `&H` followed by a string of hexadecimal digits (0-9, A-F).
+ * An octal literal is `&O` followed by a string of octal digits (0-7).
+ * A binary literal is `&B` follewed by a string of binary digits. (0-1). 
+ * Any number of digit separator `_` are permited before any digit, or block of digits with a integer literal.
+   . eg. `&B_00000000_0000__0000___0000___000000000000`.
+ * An integer literal can not end with a digit separator. eg `&B_00001_`
+
+Decimal literals directly represent the decimal value of the integral literal, whereas binary, octal and hexadecimal literals represe+nt the binary value of the integer literal (thus, `&H8000S` is -32768, not an overflow error).
+
 
 ```antlr
 IntegerLiteral
@@ -441,6 +466,7 @@ IntegralLiteralValue
     : IntLiteral
     | HexLiteral
     | OctalLiteral
+    | BinaryLiteral
     ;
 
 IntegralTypeCharacter
@@ -478,16 +504,24 @@ UnsignedLongCharacter
     : 'UL'
     ;
 
+DigitSeparator
+    : '_'
+    ;
+
 IntLiteral
-    : Digit+
+    : Digit (DigitSeparator* Digit+ )+
     ;
 
 HexLiteral
-    : '&' 'H' HexDigit+
+    : '&' 'H' ( DigitSeparator* HexDigit+ )+
     ;
 
 OctalLiteral
-    : '&' 'O' OctalDigit+
+    : '&' 'O' ( DigitSeparator* OctalDigit+ )+
+    ;
+
+BinaryLiteral
+    : '&' 'B' ( DigitSeparator* BinaryDigit+ )+
     ;
 
 Digit
@@ -501,6 +535,10 @@ HexDigit
 
 OctalDigit
     : '0' | '1' | '2' | '3' | '4' | '5' | '6' | '7'
+    ;
+
+BinaryDigit
+    : '0' | '1'
     ;
 ```
 
@@ -718,23 +756,5 @@ Nothing
     ;
 ```
 
-## Separators
-
-The following ASCII characters are separators:
-
-```antlr
-Separator
-    : '(' | ')' | '{' | '}' | '!' | '#' | ',' | '.' | ':' | '?'
-    ;
-```
-
-## Operator Characters
-
-The following ASCII characters or character sequences denote operators:
-
-```antlr
-Operator
-    : '&' | '*' | '+' | '-' | '/' | '\\' | '^' | '<' | '=' | '>'
-    ;
 ```
 

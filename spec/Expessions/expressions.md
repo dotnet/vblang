@@ -1,7 +1,3 @@
-^*Copyright (c) Microsoft. All Rights Reserved. Licensed under the Apache License, Version 2.0.  See [License.txt](https://github.com/dotnet/roslyn/blob/master/License.txt) for license information.*^    
-[Specification]("vblang/spec/VisualBasic-Specification.md") / [Expressions](Expressions.md) / **Literals**
-
-
 # Expressions
 
 An expression is a sequence of operators and operands that specifies a computation of a value, or that designates a variable or constant. This chapter defines the syntax, order of evaluation of operands and operators, and meaning of expressions.
@@ -2854,13 +2850,13 @@ MultiLineLambda
     ;
 
 MultiLineFunctionLambda
-    : LambdaModifier? 'Function' ( OpenParenthesis ParameterList? CloseParenthesis )? ( 'As' TypeName )? LineTerminator
+    : LambdaModifier* 'Function' ( OpenParenthesis ParameterList? CloseParenthesis )? ( 'As' TypeName )? LineTerminator
       Block
       'End' 'Function'
     ;
 
 MultiLineSubLambda
-    : LambdaModifier? 'Sub' ( OpenParenthesis ParameterList? CloseParenthesis )? LineTerminator
+    : LambdaModifier* 'Sub' ( OpenParenthesis ParameterList? CloseParenthesis )? LineTerminator
       Block
       'End' 'Sub'
     ;
