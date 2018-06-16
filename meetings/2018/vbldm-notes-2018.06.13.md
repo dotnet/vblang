@@ -20,19 +20,19 @@ We'll review issues and use one of the following labels
 
 (*) This is the description we decided after our first description didn't have as much transparency as we intended.
 
-We will begin reviewing with issues that have been quiet for a couple of months. Our goals with this  is not to disrupt active conversations.
+We will begin reviewing with issues that have been quiet for a couple of months. Our goals with this is not to disrupt active conversations.
 
 We will put our logic in the issue itself, not in the meeting notes as we think it will be more accessible.
 
 A few notes on our overall thinking:
 
-* We will almost never make breaking changes to Visual Basic (often resulting in rejected label)
+* We will almost never make breaking changes to Visual Basic (often resulting in _Rejected_ label)
   * There may be some extreme edge cases that we believe highly unlikely ever
   * We may be forced, and we will do everything to avoid being forced
   * We are just beginning planning for .NET Core 3 version of Visual Basic, but currently anticipate a very high bar for breaking changes.
-* We strongly believe that Visual Basic has a stance - a way of doing things. We will strive to maintain consistency with things being "VB-like" (often resulting in a No Plans or rejected label))
-* Our observation is that the vast majority of Visual Basic users are not asking for us for new features so our bar for expansion of the surface area - making a second way to do things - will be relatively high even when it's a good idea (often resulting in a No Plans label)
-* Consistent with the [Visual Basic language strategy](https://blogs.msdn.microsoft.com/dotnet/2017/02/01/the-net-language-strategy/) C# will take the lead on some issues - particularly those that would involve changes to the CRL or .NET libraries. We'll note this and suggest discussion in [CSharpLang](https://github.com/dotnet/csharplang)
+* We strongly believe that Visual Basic has a stance - a way of doing things. We will strive to maintain consistency with things being "VB-like" (often resulting in a No Plans or rejected label)
+* Our observation is that the vast majority of Visual Basic users are not asking for us for new features so our bar for expansion of the surface area - making a second way to do things - will be relatively high even when it's a good idea (often resulting in a _No Plans_ label)
+* Consistent with the [Visual Basic language strategy](https://blogs.msdn.microsoft.com/dotnet/2017/02/01/the-net-language-strategy/) C# will take the lead on some issues - particularly those that would involve changes to the CLR or .NET libraries. We'll note this and suggest discussion in [CSharpLang](https://github.com/dotnet/csharplang)
 
 # Reviewed
 
