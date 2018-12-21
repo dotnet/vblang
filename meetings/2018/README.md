@@ -30,3 +30,29 @@ Overview of meetings and agendas for 2018
   * Issue #280 [Can The Visual Basic DLL Be Open Sourced?](https://github.com/dotnet/vblang/issues/280)
   * Issue #282 [An update from the Design Safari on the `INotifyPropertyChanged` scenario](https://github.com/dotnet/vblang/issues/282)
   * Anthony D. Green attended as a guest!
+
+## May
+
+* [30th](vbldm-notes-2018.05.30.md)
+  * Europe trip report, stability, possible survey
+  * Issue labels (marking what we've reviewed)
+  * Issue 305: In and Out operators
+  * Issue 304: Select TypeOf
+  * Issue 303: Null conditional operators for add/removeHandler
+  * Issue 301: Modify how literal strings are parsed
+  * Issue 167: Support for Return? construct
+
+## June
+
+*[13th](vbldm-notes-2018.06.13.md)
+  * Review process
+  * Issues reviewed
+
+## July-December
+
+* Issue review and Microsoft.VisualBasic.Runtime.dll planning
+
+## December
+
+* [19th](vbldm-notes-2018.12.19.md)
+  * Pattern Matching discussion/proposal from community
