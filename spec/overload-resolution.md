@@ -263,7 +263,7 @@ Given a method group, the most applicable method in the group for an argument li
 
     76. If `M` is not an extension method and `N` is, eliminate `N` from the set.
 
-    77. If `M` and `N` are extension methods and `M` was found before `N` (Section [Extension Method Collection](overload-resolution.md#extension-method-collection)), eliminate `N` from the set. For example:
+    77. If `M` and `N` are extension methods and `M` was found before `N` (Section [Extension Method Collection](expressions.md#extension-method-collection)), eliminate `N` from the set. For example:
 
         ```vb
         Imports System.Runtime.CompilerServices
