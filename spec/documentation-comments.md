@@ -21,7 +21,7 @@ Public Class Point
 End Class
 ```
 
-Documentation comments must be well formed XML according to http://www.w3.org/TR/REC-xml. If the XML is not well formed, a warning is generated and the documentation file will contain a comment saying that an error was encountered.
+Documentation comments must be well formed XML according to https://www.w3.org/TR/REC-xml. If the XML is not well formed, a warning is generated and the documentation file will contain a comment saying that an error was encountered.
 
 Although developers are free to create their own set of tags, a recommended set is defined in the next section. Some of the recommended tags have special meanings:
 
