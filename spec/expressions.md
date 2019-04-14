@@ -3319,7 +3319,7 @@ A queryable collection type must satisfy one of the following conditions, in ord
 
 * It must define a conforming `Select` method.
 
-* It must have have one of the following methods
+* It must have one of the following methods
 
   ```vb
   Function AsEnumerable() As CT
