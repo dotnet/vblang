@@ -105,7 +105,7 @@ Reconsider with Vlad, probably next week.
 
 We should check that this is important and how much work before we commit. Kathleen will see if a prioritization survey at the Summit makes sense and there will be time.
 
-## Issue [#228 - Default property for reading and setting bit flags ](https://github.com/dotnet/vblang/issues/228) (and others)
+## Issue [#228 - Default property for reading and setting bit flags](https://github.com/dotnet/vblang/issues/228) (and others)
 
 Flagged enums have challenges in both C# and VB. In VB they are rather painful. A solution at the API level would be great.
 

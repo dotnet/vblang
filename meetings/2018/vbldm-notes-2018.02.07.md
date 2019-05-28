@@ -4,7 +4,7 @@ February 7,2018
 ## Agenda
 * [C# Issue #1208 - C# Design Notes for nullable reference types](https://github.com/dotnet/csharplang/issues/1208)
 * [Issue #117 - Block-scoped Option Statements](https://github.com/dotnet/vblang/issues/117)
-* [Issue #211 - Discussion / proposal: usage of any installed programming language ](https://github.com/dotnet/vblang/issues/211)
+* [Issue #211 - Discussion / proposal: usage of any installed programming language](https://github.com/dotnet/vblang/issues/211)
 
 ## C# Issue [#1208](hhttps://github.com/dotnet/csharplang/issues/1208) - C# Design Notes for nullable reference types
 
