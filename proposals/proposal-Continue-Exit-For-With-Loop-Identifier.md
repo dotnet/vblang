@@ -1,7 +1,7 @@
 # Continue Exit For Identifier
 
 * [x] [Proposed](https://github.com/dotnet/vblang/issues/186) 
-* [*] Prototype: [Prototype/ContinueForIdentifier](https://github.com/AdamSpeight2008/roslyn-AdamSpeight2008/tree/Prototpye/ContinueForID)
+* [x] Prototype: [Prototype/ContinueForIdentifier](https://github.com/AdamSpeight2008/roslyn-AdamSpeight2008/tree/Prototpye/ContinueForID) 
 * [ ] Implementation: [Not Started](https://github.com/dotnet/roslyn/BRANCH_NAME)
 * [ ] Specification: [Not Started](pr/1)
 
@@ -9,7 +9,7 @@
 [summary]: #summary
 
 Extend the capibility of `Contine For` and `Exit For` to enable continuing or exitting a loop nested higher.
-Eg. `Continue For x` and `Continue For x`
+Eg. `Continue For x` and `Exit For x`
 
 -------
 
@@ -17,8 +17,13 @@ Eg. `Continue For x` and `Continue For x`
 [motivation]: #motivation
 
 * Why are we doing this?
-  * Seems like natural extension to the language, give the `Next` can also have an identifer. eg `Next x`
+  * Seems like natural extension to the language, given that the `Next` can also have an identifer. eg `Next x`
+  * It can be difficult to implement workarounds, or require used different loop constructs at different nestings.
+  * Often implemented via `label`s and `GoTo`s. eg `GoTo start_of_loop_x`.
 * What use cases does it support?
+  * This proposal is tightly focused on two cases;
+    * `Continue For loop_identifier`
+    * `Exit For loop_identifier`
   * It can difficult to implement, resorting to using `label` and `GoTo` eg `GoTo start_of_loop_x` 
 * What is the expected outcome?
   * Without an identifier eg `Continue For` or `Exit For` will perform exactly as it does now.
@@ -31,7 +36,15 @@ Eg. `Continue For x` and `Continue For x`
 ## Detailed design
 [design]: #detailed-design
 
-Add an optional child node to `ExitStatementSyntax`
+### Syntax Node Changes
+  An additional optional child node `<child name="ControlVariable" optional="true" kind="@ExpressionSyntax" />` will added to
+  * `ExitStatementSyntax`
+  * `ContinueStatementSyntax`
+  This additional node is used to identify which loop identifier to the statement refers to.
+  If the identifier is absent, the statement refers to current loop.
+  
+<details><summary>ExitStatementSyntax change</summary><p>
+
 ```xml
     <!--****************
       -  Exit
@@ -100,8 +113,10 @@ Add an optional child node to `ExitStatementSyntax`
       <child name="ControlVariable" optional="true" kind="@ExpressionSyntax" />
     </node-structure>
 ```
+</p></details>
 
-Add an optional child node to `ContinueStatementSyntax`
+<details><summary>ContinueStatementSyntax change</summary><p>
+
 ```xml
 <!--****************
       -  Continue
@@ -141,17 +156,24 @@ Add an optional child node to `ContinueStatementSyntax`
       <child name="ControlVariable" optional="true" kind="@ExpressionSyntax" />
     </node-structure>
 ```
+</p></details>
+
+### Parsing Changes
+During parsing of the `ContinueForStatement` and `ExitForStatement` an additional check is performed to see if there is an identifer present. 
 
 Parse the optional identifier only if the statements are of the correct kind.
 `ContinueForStatement` and `ExitForStatement`
 
-Validate that the identifer is a loop identifer, within this method. 
-And only if the identifier is a nesting higher or equal to the current nesting level. IE You can continue or exit an loop that is lower eg an inner loop.
+### Binding Changes
+During binding of the `ContinueForStatement` and `ExitForStatment`, we must validate that the identifer is a loop identifer, of a current or higher nesting level.
 
-This is the bulk of the proposal. Explain the design in enough detail for somebody familiar
-with the language to understand, and for somebody familiar with the compiler to implement,  and include examples of how the feature is used. This section can start out light before the prototyping phase but should get into specifics and corner-cases as the feature is iteratively designed and implemented.
+### Lowering Changes
+The proposal achieves this via modifying how the `For` and `For Each` lowering are done. By extending the labels using during the lowering, to now include the loop's identifier. eg `StartOfForLoop_OuterLoop:` and `ExitForLoop_InnerLoop:`
+So when the `Exit` or `Continue` is lowered, the corrispondig `GoTo` is to the correct location (thus correct nested loop) in the lowered code. eg `GoTo StartOfForLoop_OuterLoop` and `GoTo ExitForLoop_InnerLoop`
 
-Example code:
+----------
+
+<details><summary>Example Code:</summary><p>
 
 ```vbnet
 Imports System        
@@ -178,7 +200,9 @@ Module M1
     End Sub
 End Module
 ```
-Output
+
+<details><summary>Expected Output</summary><p>
+ 
 ```
 Loop i Block Start (0)
 Loop j Block Start (0)
@@ -189,46 +213,10 @@ Exiting
 After Loop i
 ```
 
-```vbnet
-Imports System        
-Module M1
-    Sub Main()
-        dim continueLoop as Boolean = true
-        Dim xs = {0, 1, 2}
-        Dim ys = {0, 1, 2}
-        For Each x In xs
-            Console.WriteLine($"Loop x Block Start ({x})")
-            For Each y In ys
-              Console.WriteLine($"Loop y Block Start ({x})")
-              If continueLoop Then
-                Console.WriteLine("Continuing")
-                continueLoop = false
-                Continue For i
-              End If
-              Console.WriteLine("Exiting")
-              Exit For i
-              Console.WriteLine($"Loop y Block End ({y})")
-            Next j
-            Console.WriteLine("After Loop y")
-            Console.WriteLine($"Loop x Block End ({x})")
-        Next   
-        Console.WriteLine("After Loop x") 
-    End Sub
-End Module
-```
-Output
-```
-Loop x Block Start (0)
-Loop y Block Start (0)
-Continuing
-Loop x Block Start (1)
-Loop y Block Start (0)
-Exiting
-After Loop x
-```
+</p></details>
 
-This is implement in this proposal by modifying how the lowering is done, especially the labels use.
-The labels used will now include the loop's identifier, which allows it to jump to correct location in the lowered code.
+</p></details>
+
 
 -----
 
@@ -255,5 +243,5 @@ What parts of the design are still TBD?
 * Additional error messages
 * Additional use cases. *Not covered in this proposal, has it require provide a name for the loop constuct.*
   * `Do ... Loop`
-  * 'While .. End While`
+  * `While .. End While`
 
