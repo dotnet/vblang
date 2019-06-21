@@ -10,7 +10,15 @@ If you discover bugs or deficiencies in the above, please leave an issue to rais
 
 For *new feature proposals*, however, please raise them for [discussion](https://github.com/dotnet/vblang/labels/Discussion), and *only* submit a proposal as a pull request if invited to do so by a member of the Language Design Team (a "champion").
 
-## Discussion
+## Contribute
+
+### Moving to .NET Core
+
+VB is moving to .NET Core. This is the move that was important since there will be no more language development on framework in any language. And it will be a while until we start work on VB Next. We're still months away from getting Visual Basic .NET 16.0 out the door.
+
+The biggest thing you could do for Visual Basic.NET right now is to download the latest [.NET Core Preview](https://dotnet.microsoft.com/download/dotnet-core/3.0) and give feedback on how well it works for you. Testing is not the same as having it in the hands of real users. That's the foundation for the language features we'll do in the future.
+
+### Discussion
 
 Discussion pertaining to language features takes place in the form of issues in this repo, under the [Discussion label](https://github.com/dotnet/vblang/labels/Discussion).
 
@@ -24,7 +32,7 @@ GitHub is not ideal for discussions, but it is beneficial to have language featu
 - If a comment goes into detail on a subtopic, also consider starting a new issue and linking back.
 - Is your comment useful for others to read, or can it be adequately expressed with an emoji reaction to an existing comment?
 
-## Design Process
+### Design Process
 
 Visual Basic .NET is designed by the Visual Basic .NET Language Design Team (LDT).
 
