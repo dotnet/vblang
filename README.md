@@ -16,7 +16,7 @@ Discussion pertaining to language features takes place in the form of issues in 
 
 If you want to suggest a feature, discuss current design notes or proposals, etc., please [open a new issue](https://github.com/dotnet/vblang/issues/new), and it will be tagged Discussion.
 
-GitHub is not ideal for discussions, but it is beneficial to have language features discussed nearby to where the design artifacts are. Comment threads that are short and stay on topic are much more likely to be read. If you leave comment number fifty, chances are that only a few people will read it. To make discussions easier to navigate and benefit from, please observe a few rules of thumb:
+GitHub is not ideal for discussions (see [VB-NET - Gitter](https://gitter.im/VB-NET) instead), but it is beneficial to have language features discussed nearby to where the design artifacts are. Comment threads that are short and stay on topic are much more likely to be read. If you leave comment number fifty, chances are that only a few people will read it. To make discussions easier to navigate and benefit from, please observe a few rules of thumb:
 
 - Discussion should be relevant to Visual Basic .NET language design. Issues that are not will be summarily closed.
 - Choose a descriptive title for the issue, that clearly communicates the scope of discussion.
