@@ -18,7 +18,7 @@ VB is moving to .NET Core! This move is important since language development wil
 
 The biggest thing you could do for Visual Basic right now is to download the latest [.NET Core Preview](https://dotnet.microsoft.com/download/dotnet-core/3.0) and give feedback on how well it works for you. Testing is not the same as having it in the hands of real users. That's the foundation for the language features we'll do in the future. You can file issues via the Visual Studio feedback button, or filing issues on the [Roslyn GitHub repo](https://github.com/dotnet/roslyn) for language issues, or [CoreFx](https://github.com/dotnet/corefx) for issues with the Visual Basic.NET runtime (microsoft.visualbasic.dll). For missing features, you can open issues on (VBLang)[https://github.com/dotnet/vblang]. 
 
-### Discussion
+## Discussion
 
 Discussion pertaining to language features takes place in the form of issues in this repo, under the [Discussion label](https://github.com/dotnet/vblang/labels/Discussion).
 
@@ -32,7 +32,7 @@ GitHub is not ideal for discussions, but it is beneficial to have language featu
 - If a comment goes into detail on a subtopic, also consider starting a new issue and linking back.
 - Is your comment useful for others to read, or can it be adequately expressed with an emoji reaction to an existing comment?
 
-### Design Process
+## Design Process
 
 Visual Basic .NET is designed by the Visual Basic .NET Language Design Team (LDT).
 
