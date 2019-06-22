@@ -14,7 +14,7 @@ For *new feature proposals*, however, please raise them for [discussion](https:/
 
 ### Moving to .NET Core
 
-VB is moving to .NET Core. This is the move that was important since there will be no more language development on framework in any language. And it will be a while until we start work on VB Next. We're still months away from getting Visual Basic .NET 16.0 out the door.
+VB is moving to .NET Core! This move is important since language development will now be on .NET Core (not .NET Framework) for all languages going forward. 
 
 The biggest thing you could do for Visual Basic.NET right now is to download the latest [.NET Core Preview](https://dotnet.microsoft.com/download/dotnet-core/3.0) and give feedback on how well it works for you. Testing is not the same as having it in the hands of real users. That's the foundation for the language features we'll do in the future.
 
