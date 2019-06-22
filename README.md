@@ -10,15 +10,13 @@ If you discover bugs or deficiencies in the above, please leave an issue to rais
 
 For *new feature proposals*, however, please raise them for [discussion](https://github.com/dotnet/vblang/labels/Discussion), and *only* submit a proposal as a pull request if invited to do so by a member of the Language Design Team (a "champion").
 
-## Contribute
-
-### Moving to .NET Core
+## Moving to .NET Core
 
 VB is moving to .NET Core! This move is important since language development will now be on .NET Core (not .NET Framework) for all languages going forward. 
 
 ## How you can help
 
-The biggest thing you could do for Visual Basic.NET right now is to download the latest [.NET Core Preview](https://dotnet.microsoft.com/download/dotnet-core/3.0) and give feedback on how well it works for you. Testing is not the same as having it in the hands of real users. That's the foundation for the language features we'll do in the future. You can file issues via the Visual Studio feedback button, or filing issues on the [Roslyn GitHub repo](https://github.com/dotnet/roslyn) for language issues, or [CoreFx](https://github.com/dotnet/corefx) for issues with the Visual Basic.NET runtime (microsoft.visualbasic.dll). For missing features, you can open issues on (VBLang)[https://github.com/dotnet/vblang]. 
+The biggest thing you could do for Visual Basic right now is to download the latest [.NET Core Preview](https://dotnet.microsoft.com/download/dotnet-core/3.0) and give feedback on how well it works for you. Testing is not the same as having it in the hands of real users. That's the foundation for the language features we'll do in the future. You can file issues via the Visual Studio feedback button, or filing issues on the [Roslyn GitHub repo](https://github.com/dotnet/roslyn) for language issues, or [CoreFx](https://github.com/dotnet/corefx) for issues with the Visual Basic.NET runtime (microsoft.visualbasic.dll). For missing features, you can open issues on (VBLang)[https://github.com/dotnet/vblang]. 
 
 ### Discussion
 
