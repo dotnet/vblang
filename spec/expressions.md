@@ -253,7 +253,7 @@ End Module
 
 This code displays:
 
-```
+```console
 Early-bound: xy
 Late-bound: yx
 ```
@@ -289,7 +289,7 @@ End Module
 
 This code displays:
 
-```
+```console
 F(Base)
 F(Derived)
 ```
@@ -471,7 +471,7 @@ End Module
 
 The resulting output is:
 
-```
+```console
 Int32
 Int32
 String
@@ -659,7 +659,7 @@ End Module
 
 This code prints out:
 
-```
+```console
 MoreDerived.F
 Derived.F
 Derived.F
@@ -1926,7 +1926,7 @@ End Module
 
 It prints the following result:
 
-```
+```console
 System.Int16 = 512
 ```
 
@@ -2694,7 +2694,7 @@ End Module
 
 It prints the following result:
 
-```
+```console
 And: False True
 Or: True False
 AndAlso: False
@@ -2892,7 +2892,7 @@ End Module
 
 will print out:
 
-```
+```console
 2 4 6 8
 ```
 
@@ -3109,13 +3109,13 @@ End Module
 
 prints
 
-```
+```console
 1 2 3 4 5 6 7 8 9 10
 ```
 
 instead of
 
-```
+```console
 9 9 9 9 9 9 9 9 9 9
 ```
 

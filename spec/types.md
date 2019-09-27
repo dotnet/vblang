@@ -80,7 +80,7 @@ End Module
 
 The output of the program is:
 
-```
+```console
 Values: 0, 123
 Refs: 123, 123
 ```
@@ -385,7 +385,7 @@ End Module
 
 The example above prints the enumeration values and their associated values. The output is:
 
-```
+```console
 Red = 0
 Green = 10
 Blue = 11
@@ -988,7 +988,7 @@ End Module
 
 The program outputs the following:
 
-```
+```console
 arr(0) = 0
 arr(1) = 1
 arr(2) = 4

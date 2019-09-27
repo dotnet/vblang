@@ -121,7 +121,7 @@ Given a method group, the most applicable method in the group for an argument li
 
         The above example produces the following output:
 
-        ```
+        ```console
         F(Object, Object())
         F(Object, Object, Object())
         F(Object, Object, Object())
@@ -506,7 +506,7 @@ End Module
 
 The above example produces the following output:
 
-```
+```console
 System.Int32 System.String System.Double
 System.Object[]
 System.Object[]
