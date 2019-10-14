@@ -334,7 +334,7 @@ End Module
 
 The output of the program is:
 
-```vb
+```console
 F()
 F(Integer)
 F(Object)
@@ -537,7 +537,7 @@ End Module
 
 In the example, class `Base` introduces a method `F` and an `Overridable` method `G`. The class `Derived` introduces a new method `F`, thus shadowing the inherited `F`, and also overrides the inherited method `G`. The example produces the following output:
 
-```
+```console
 Base.F
 Derived.F
 Derived.G
@@ -641,7 +641,7 @@ End Module
 
 The example produces the following output, even though the value parameter `p` is modified:
 
-```
+```console
 pre: a = 1
 p = 1
 post: a = 1
@@ -676,7 +676,7 @@ End Module
 
 The output of the program is:
 
-```
+```console
 pre: x = 1, y = 2
 post: x = 2, y = 1
 ```
@@ -757,7 +757,7 @@ End Module
 
 The output of the program is:
 
-```
+```console
 x = 10, y = 20
 x = 30, y = 40
 ```
@@ -802,7 +802,7 @@ End Module
 
 The example produces the output
 
-```
+```console
 Array contains 3 elements: 1 2 3
 Array contains 4 elements: 10 20 30 40
 Array contains 0 elements:
@@ -895,7 +895,7 @@ End Module
 
 This will print out:
 
-```
+```console
 Raised
 Raised
 ```
@@ -1229,7 +1229,7 @@ End Class
 
 When `New B()` is used to create an instance of `B`, the following output is produced:
 
-```
+```console
 x = 1, y = 1
 ```
 
@@ -1340,7 +1340,7 @@ End Class
 
 The output could be either of the following:
 
-```
+```console
 Init A
 A.F
 Init B
@@ -1349,7 +1349,7 @@ B.F
 
 or
 
-```
+```console
 Init B
 Init A
 A.F
@@ -1386,7 +1386,7 @@ End Class
 
 The output is:
 
-```
+```console
 Init B
 B.G
 ```
@@ -1409,7 +1409,7 @@ End Class
 
 This produces the output:
 
-```
+```console
 X = 1, Y = 2
 ```
 
@@ -1417,7 +1417,7 @@ To execute the `Main` method, the system first loads class `B`. The `Shared` con
 
 Had the `Main` method instead been located in class `A`, the example would have produced the following output:
 
-```
+```console
 X = 2, Y = 1
 ```
 
@@ -1857,7 +1857,7 @@ End Class
 
 Prints out:
 
-```
+```console
 1
 1
 2
@@ -2040,7 +2040,7 @@ End Module
 
 The example produces the following output:
 
-```
+```console
 x = 1.4142135623731, i = 100, s = Hello
 ```
 
@@ -2142,7 +2142,7 @@ End Module
 
 Because `b` is automatically initialized to its default value when the class is loaded and `i` is automatically initialized to its default value when an instance of the class is created, the preceding code produces the following output:
 
-```
+```console
 b = False, i = 0
 ```
 
@@ -2167,7 +2167,7 @@ End Module
 
 This program produces the output:
 
-```vb
+```console
 x = 10, y = 20
 ```
 
@@ -2767,7 +2767,7 @@ End Module
 
 This program will produce the output:
 
-```
+```console
 MoreDerived = 10
 Derived = 10
 Base = 10

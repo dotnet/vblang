@@ -303,7 +303,7 @@ End Module
 
 The output of the program is:
 
-```
+```console
 Values: 0, 123
 Refs: 123, 123
 ```
@@ -337,7 +337,7 @@ End Module
 
 The output of the program is:
 
-```
+```console
 Values: 123, 123
 ```
 
@@ -401,7 +401,7 @@ End Module
 
 The first call to `Increment` modifies the value in the variable `x`. This is not equivalent to the second call to `Increment`, which modifies the value in a boxed copy of `x`. Thus, the output of the program is:
 
-```
+```console
 0
 1
 1
