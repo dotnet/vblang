@@ -1,4 +1,4 @@
-# Statements - Visual Basic specifications
+# Statements - Visual Basic specification
 
 Statements represent executable code.
 
@@ -2065,4 +2065,3 @@ The yield statement takes a single expression which must be classified as a valu
 Control flow only ever reaches a `Yield` statement when the `MoveNext` method is invoked on an iterator object. (This is because an iterator method instance only ever executes its statements due to the `MoveNext` or `Dispose` methods being called on an iterator object; and the `Dispose` method will only ever execute code in `Finally` blocks, where `Yield` is not allowed).
 
 When a `Yield` statement is executed, its expression is evaluated and stored in the *iterator current variable* of the iterator method instance associated with that iterator object. The value `True` is returned to the invoker of `MoveNext`, and the control point of this instance stops advancing until the next invocation of `MoveNext` on the iterator object.
-

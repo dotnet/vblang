@@ -1,4 +1,4 @@
-# Type Members - Visual Basic specifications
+# Type Members - Visual Basic specification
 
 Type members define storage locations and executable code. They can be methods, constructors, events, constants, variables, and properties.
 

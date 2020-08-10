@@ -1,4 +1,4 @@
-# Conversions - Visual Basic specifications
+# Conversions - Visual Basic specification
 
 Conversion is the process of changing a value from one type to another. For example, a value of type `Integer` can be converted to a value of type `Double`, or a value of type `Derived` can be converted to a value of type `Base`, assuming that `Base` and `Derived` are both classes and `Derived` inherits from `Base`. Conversions may not require the value itself to change (as in the latter example), or they may require significant changes in the value representation (as in the former example).
 

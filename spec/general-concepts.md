@@ -1,4 +1,4 @@
-# General Concepts - Visual Basic specifications
+# General Concepts - Visual Basic specification
 
 This chapter covers a number of concepts that are required to understand the semantics of the Microsoft Visual Basic language. Many of the concepts should be familiar to Visual Basic programmers or C/C++ programmers, but their precise definitions may differ.
 

@@ -1,4 +1,4 @@
-# Expressions - Visual Basic specifications
+# Expressions - Visual Basic specification
 
 An expression is a sequence of operators and operands that specifies a computation of a value, or that designates a variable or constant. This chapter defines the syntax, order of evaluation of operands and operators, and meaning of expressions.
 
@@ -5003,4 +5003,3 @@ If the await operand has type Object, then this behavior is deferred until runti
 - Step 3.a is accomplished by attempting `TryCast(awaiter, ICriticalNotifyCompletion)`, and if this fails then `DirectCast(awaiter, INotifyCompletion)`.
 
 The resumption delegate passed in 3.a may only be invoked once. If it is invoked more than once, the behavior is undefined.
-

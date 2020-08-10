@@ -1,4 +1,4 @@
-# Source Files and Namespaces - Visual Basic specifications
+# Source Files and Namespaces - Visual Basic specification
 
 A Visual Basic program consists of one or more source files. When a program is compiled, all of the source files are processed together; thus, source files can depend on each other, possibly in a circular fashion, without any forward-declaration requirement. The textual order of declarations in the program text is generally of no significance.
 
