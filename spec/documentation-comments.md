@@ -1,4 +1,4 @@
-# Documentation Comments
+# Documentation Comments - Visual Basic specifications
 
 Documentation comments are specially formatted comments in the source that can be analyzed to produce documentation about the code they are attached to. The basic format for documentation comments is XML. When the compiling code with documentation comments, the compiler may optionally emit an XML file that represents the sum total of the documentation comments in the source. This XML file can then be used by other tools to produce printed or online documentation.
 
