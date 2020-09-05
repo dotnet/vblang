@@ -40,7 +40,7 @@ Here is an example of a regular method
 Function Test() As Integer
     Console.WriteLine("hello")
     Return 1
-End Sub
+End Function
 
 Dim x = Test()    ' invokes the function, prints "hello", assigns 1 to x
 ```
@@ -532,7 +532,7 @@ Structure Test
 
     Function F() As Integer
         Return 10
-    End Sub
+    End Function
 End Structure
 
 Module TestModule
