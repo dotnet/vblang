@@ -1,4 +1,4 @@
-# Types
+# Types - Visual Basic specification
 
 The two fundamental categories of types in Visual Basic are *value types* and *reference types*. Primitive types (except strings), enumerations, and structures are value types. Classes, strings, standard modules, interfaces, arrays, and delegates are reference types.
 

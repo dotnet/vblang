@@ -1,4 +1,4 @@
-# Lexical Grammar
+# Lexical Grammar - Visual Basic specification
 
 Compilation of a Visual Basic program first involves translating the raw stream of Unicode characters into an ordered set of lexical tokens. Because the Visual Basic language is not free-format, the set of tokens is then further divided into a series of logical lines. A *logical line* spans from either the start of the stream or a line terminator through to the next line terminator that is not preceded by a line continuation or through to the end of the stream.
 
@@ -737,4 +737,3 @@ Operator
     : '&' | '*' | '+' | '-' | '/' | '\\' | '^' | '<' | '=' | '>'
     ;
 ```
-

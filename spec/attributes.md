@@ -1,4 +1,4 @@
-# Attributes
+# Attributes - Visual Basic specification
 
 The Visual Basic language enables the programmer to specify modifiers on declarations, which represent information about the entities being declared. For example, affixing a class method with the modifiers `Public`, `Protected`, `Friend`, `Protected Friend`, or `Private` specifies its accessibility.
 
