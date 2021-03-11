@@ -5,7 +5,7 @@ Overview of meetings and agendas for 2015
 
 ## Jan 14, 2015
 
-[Visul Basic .NET Design Meeting Notes for Jan 14, 2015](LDM-2015-01-14.md)
+[Visul Basic .NET Design Meeting Notes for Jan 14, 2015](LDM-2015-01-14-VB.md)
 
 Overload Resolution for String Interpolation
 
