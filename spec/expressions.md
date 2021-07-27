@@ -1,4 +1,4 @@
-# Expressions
+# Expressions in Visual Basic
 
 An expression is a sequence of operators and operands that specifies a computation of a value, or that designates a variable or constant. This chapter defines the syntax, order of evaluation of operands and operators, and meaning of expressions.
 
