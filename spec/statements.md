@@ -1,4 +1,4 @@
-# Statements in Visual Basic
+# Statements - Visual Basic
 
 Statements represent executable code.
 
