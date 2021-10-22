@@ -2,7 +2,7 @@
 
 *NOTE:* See how to [specify the language version for your project here](https://docs.microsoft.com/en-us/dotnet/visual-basic/language-reference/configure-language-version)
 
-## Visual Studio 2022
+## Visual Studio 2022, .NET 6
 
 - [CallerArgumentExpression](https://github.com/dotnet/csharplang/blob/main/proposals/csharp-10.0/caller-argument-expression.md): Note that this feature isn't gated under a language version. It's available for compilers that shipped starting with Visual Studio 2022 version 17.0.
 
