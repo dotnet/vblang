@@ -98,7 +98,7 @@ When control flow exits the iterator method body through an unhandled exception,
 
 As for the other possible return types of an iterator function,
 
-* When an iterator method is invoked whose return type is `IEnumerable(Of T)` for some `T`, an instance is first created -- specific to that invocation of the iterator method -- of all parameters in the method, and they are initialized with the supplied values. The result of the invocation is an an object which implements the return type. Should this object's `GetEnumerator` method be called, it creates an instance -- specific to that invocation of `GetEnumerator` -- of all parameters and local variables in the method. It initializes the parameters to the values already saved, and proceeds as for the iterator method above.
+* When an iterator method is invoked whose return type is `IEnumerable(Of T)` for some `T`, an instance is first created -- specific to that invocation of the iterator method -- of all parameters in the method, and they are initialized with the supplied values. The result of the invocation is an object which implements the return type. Should this object's `GetEnumerator` method be called, it creates an instance -- specific to that invocation of `GetEnumerator` -- of all parameters and local variables in the method. It initializes the parameters to the values already saved, and proceeds as for the iterator method above.
 * When an iterator method is invoked whose return type is the non-generic interface `IEnumerator`, the behavior is exactly as for `IEnumerator(Of Object)`.
 * When an iterator method is invoked whose return type is the non-generic interface `IEnumerable`, the behavior is exactly as for `IEnumerable(Of Object)`.
 
