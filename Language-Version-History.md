@@ -1,6 +1,6 @@
 # Features Added in VB Language Versions
 
-*NOTE:* See how to [specify the language version for your project here](https://docs.microsoft.com/en-us/dotnet/visual-basic/language-reference/configure-language-version)
+*NOTE:* See how to [specify the language version for your project here](/dotnet/visual-basic/language-reference/configure-language-version)
 
 ## Visual Studio 2022, .NET 6
 
