@@ -21,3 +21,7 @@
 - [Non-trailing named arguments](https://github.com/dotnet/csharplang/blob/master/proposals/csharp-7.2/non-trailing-named-arguments.md)
 - [Private Protected accessibility](https://github.com/dotnet/csharplang/blob/master/proposals/csharp-7.2/private-protected.md)
 - [Digit separator after base specifier](https://github.com/dotnet/csharplang/blob/master/proposals/csharp-7.2/leading-separator.md)
+
+## VB 17.13 (Visual Studio 2022 version 17.13)
+
+- Recognizing 'unmanaged' constraint
