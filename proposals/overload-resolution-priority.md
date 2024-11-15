@@ -103,7 +103,7 @@ was ignored in this case.
 
 ## Open Questions
 
-### Should `OverloadResolutionPriorityAttribute` be dissallowed in some locations?
+### Should `OverloadResolutionPriorityAttribute` be disallowed in some locations?
 
 By analogy with C# we could make it an error to apply `OverloadResolutionPriorityAttribute` to the following locations:
 
