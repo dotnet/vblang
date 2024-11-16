@@ -285,7 +285,7 @@ ExternalChecksumStatement
     ;
 ```
 
-An external checksum directive contains the filename of the external file, a globally unique identifier (GUID) associated with the file and the checksum for the file. The GUID is specified as a string constant of the form "{xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx}", where x is a hexadecimal digit. The checksum is specified as a string constant of the form "xxxx...", where x is a hexadecimal digit. The number of digits in a checksum must be an even number.
+An external checksum directive contains the filename of the external file, a globally unique identifier (GUID) associated with the hash algorithm and the checksum for the file. The GUID is specified as a string constant of the form "{xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx}", where x is a hexadecimal digit. The checksum is specified as a string constant of the form "xxxx...", where x is a hexadecimal digit. The number of digits in a checksum must be an even number.
 
 An external file may have multiple external checksum directives associated with it provided that all of the GUID and checksum values match exactly. If the name of the external file matches the name of a file being compiled, the checksum is ignored in favor of the compiler's checksum calculation.
 
@@ -293,8 +293,8 @@ For example:
 
 ```vb
 #ExternalChecksum("c:\wwwroot\inetpub\test.aspx", _
-    "{12345678-1234-1234-1234-123456789abc}", _
-    "1a2b3c4e5f617239a49b9a9c0391849d34950f923fab9484")
+    "{406EA660-64CF-4C82-B6F0-42D48172A799}", _
+    "ab007f1d23d9")
 
 Module Test
     Sub Main()
