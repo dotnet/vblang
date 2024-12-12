@@ -91,21 +91,10 @@ public sealed class OverloadResolutionPriorityAttribute(int priority) : Attribut
 }
 ```
 
-All methods in VB have a default ***overload_resolution_priority*** of 0, unless they are attributed with `OverloadResolutionPriorityAttribute`. If they are
-attributed with that attribute, then their ***overload_resolution_priority*** is the integer value provided to the first argument of the attribute.
+All methods and properties in VB have a default ***overload_resolution_priority*** of 0, unless they are attributed with `OverloadResolutionPriorityAttribute`.
+If they are attributed with that attribute, then their ***overload_resolution_priority*** is the integer value provided to the first argument of the attribute.
 
-### Langversion Behavior
-
-Overload Resolution process does not perform filtering by ***overload_resolution_priority*** in VB < 17.13.
-No errors or warnings issued by the Overload Resolution process due to the fact that ***overload_resolution_priority***
-was ignored in this case.
-
-
-## Open Questions
-
-### Should `OverloadResolutionPriorityAttribute` be disallowed in some locations?
-
-By analogy with C# we could make it an error to apply `OverloadResolutionPriorityAttribute` to the following locations:
+By analogy with C#, it is an error to apply `OverloadResolutionPriorityAttribute` to the following locations:
 
 * Property, or event accessors
 * Conversion operators
@@ -116,10 +105,10 @@ By analogy with C# we could make it an error to apply `OverloadResolutionPriorit
 
 Attributes encountered on these locations in metadata effectively will have no impact in VB code.
 
-Reporting an error might be a breaking change because VB allowed the attribute at any location before.
-
 ### Langversion Behavior
 
-Should a langversion errors be issued when `OverloadResolutionPriorityAttribute` is applied?
+Overload Resolution process does not perform filtering by ***overload_resolution_priority*** in VB < 17.13.
+No errors or warnings issued by the Overload Resolution process due to the fact that ***overload_resolution_priority***
+was ignored in this case.
 
-Reporting the error might be a breaking change because VB allowed the attribute in the previous version.
+By analogy with C#, a langversion errors is issued when `OverloadResolutionPriorityAttribute` is applied in VB < 17.13.
