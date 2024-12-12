@@ -77,6 +77,84 @@ The **overload_resolution_priority** of a member comes from the least-derived de
 inherited or inferred from any interface members a type member may implement, and given a member `Mx` that implements an interface member `Mi`, no
 warning is issued if `Mx` and `Mi` have different **overload_resolution_priorities**.
 
+The candidates that utilize a narrowing conversion or a narrowing delegate relaxation are excluded from determining the maximum **overload_resolution_priority**
+because there is no guarantee that those candidates can be successfully invoked with the supplied arguments.
+For example, consider the following scenario:
+``` vb
+Module Module1
+
+    Sub Main()
+        M1(New C0())
+    End Sub
+
+    <System.Runtime.CompilerServices.OverloadResolutionPriority(1)>
+    Sub M1(x As C1)
+    End Sub
+
+    Sub M1(x As C2)
+        System.Console.Write(2)
+    End Sub
+End Module
+
+Class C0
+    Public Shared Narrowing Operator CType(x As C0) As C1
+        Throw New System.InvalidCastException()
+    End Operator
+    Public Shared Widening Operator CType(x As C0) As C2
+        Return New C2()
+    End Operator
+End Class
+
+Class C1
+End Class
+
+Class C2
+End Class
+```
+
+When it is compiled with `Option Strict On`, `Sub M1(x As C1)` is not applicable because it cannot be called without a
+narrowing conversion. The only applicable candidate is `M1(x As C2)` and it is called.
+
+When the code is compiled with `Option Strict Off`, both methods are applicable. If the priority was given to `Sub M1(x As C1)`,
+a candidate that uses only widening conversions would be filtered out, resulting in an `InvalidCastException` thrown during execution.
+
+Here is another example:
+``` vb
+Option Strict Off
+
+Module Module1
+
+    Sub Main()
+        M1(CObj(New C2()))
+    End Sub
+
+    <System.Runtime.CompilerServices.OverloadResolutionPriority(1)>
+    Sub M1(x As I1)
+        System.Console.Write(1)
+    End Sub
+
+    Sub M1(x As I2)
+        System.Console.Write(2)
+    End Sub
+End Module
+
+Interface I1
+End Interface
+
+Interface I2
+End Interface
+
+Class C2
+    Implements I2
+End Class
+```
+
+In this case both candidates require narrowing conversion. Since filtering doesn't happen, the result of overload resolution
+is a late-bound invocation, which determines that `Sub M1(x As I1)` is inapplicable and invokes `Sub M1(x As I2)`.
+
+If the priority was given to `Sub M1(x As I1)` at compile time, it would remain the only applicable candidate and would be
+invoked early-bound, resulting in an `InvalidCastException` thrown during execution.
+
 ### `System.Runtime.CompilerServices.OverloadResolutionPriorityAttribute`
 
 There is the following attribute in the BCL:
