@@ -189,4 +189,4 @@ Overload Resolution process does not perform filtering by ***overload_resolution
 No errors or warnings issued by the Overload Resolution process due to the fact that ***overload_resolution_priority***
 was ignored in this case.
 
-By analogy with C#, a langversion errors is issued when `OverloadResolutionPriorityAttribute` is applied in VB < 17.13.
+By analogy with C#, a langversion error is issued when `OverloadResolutionPriorityAttribute` is applied in VB < 17.13.
