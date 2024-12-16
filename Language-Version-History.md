@@ -25,3 +25,4 @@
 ## VB 17.13 (Visual Studio 2022 version 17.13)
 
 - Recognizing 'unmanaged' constraint
+- [Overload Resolution Priority](https://github.com/dotnet/vblang/blob/main/proposals/overload-resolution-priority.md)
